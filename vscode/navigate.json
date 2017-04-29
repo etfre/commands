@@ -1,0 +1,25 @@
+{
+    "functions": [
+        ["flystart()", "{ctrl+f1}"],
+        ["flyend()", "{ctrl+f2}"],
+        ["spaceBack()", "flystart() 'sb' flyend()"],
+        ["spaceForward()", "flystart() 'sf' flyend()"],
+        ["spaceAround(char)", "spaceBack() $char spaceForward()"]
+    ],
+    "rules": [
+        ["clipboard", "(cut={ctrl+x} | copy={ctrl+c} | select='')"],
+        ["motion", "(until=t | after=f | before=F | retreat=T)"],
+        ["flydirection", "(north=w | west=a | south=s | east=d | first=f | final=l | genesis=z | apocalypse=e)"]
+    ],
+    "commands": [
+        ["<motion> <char> <optional_number>", "flystart() $-1 'f' $1$-2 'c' flyend()"],
+        ["<clipboard> <motion> <char> <optional_number>", "flystart() $-1 'f' $2$-2 's' flyend() $1"],
+        ["<flydirection> <optional_number>", "flystart() $2 'd' $1 'c' flyend()"],
+        ["<clipboard> <flydirection> <optional_number>", "flystart() $3 'd' $2 's' flyend() $1"],
+        ["<operator>", "spaceAround($1)"],
+        ["short <operator> <optional_number>", "repeat($1, $2)"],
+        ["new arg", "',' spaceForward()"],
+        ["<clipboard> word", "{esc}{ctrl+d}wait(.3)$1 wait(.3){esc}"]
+    ],
+    "scope": "vscode"
+}

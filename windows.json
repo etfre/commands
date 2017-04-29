@@ -1,0 +1,57 @@
+{
+    "functions": [
+        [
+            "repeat(word)",
+            "$word"
+        ]
+    ],
+    "rules": [
+        [
+            "chrome",
+            "chrome='Google Chrome'"
+        ],
+        [
+            "pillars",
+            "pillars='Pillars of Eternity'"
+        ],
+        [
+            "code",
+            "code='Visual Studio Code'"
+        ],
+        [
+            "media",
+            "media='vlc media player'"
+        ],
+        [
+            "bash",
+            "bash='evan@EVAN-PC'"
+        ],
+        ["terminal", "terminal='Terminal of Evan'"],
+        [
+            "windows",
+            "(<chrome> | <pillars> | <code> | <terminal> | <bash> | <media>)"
+        ]
+    ],
+    "conditions": {},
+    "commands": [
+        [
+            "open <windows> <optional_number>",
+            "window.focus($1, $2)"
+        ],
+        [
+            "close window",
+            "window.close()"
+        ],
+        ["maximize window", "{f11}"],
+        [
+            "start excel",
+            "start('C:\\Program Files (x86)\\Microsoft VS Code\\Code.exe')"
+        ],
+        ["start terminal", "{ctrl+alt+t}"],
+        ["start bash", "start('C:\\Users\\evan\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\bash')"],
+        ["start code", "shell(code)"],
+        ["start chrome", "shell('start chrome')"],
+        ["switch to bash", "bash {enter}"]
+    ],
+    "scope": ""
+}

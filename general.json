@@ -1,0 +1,16 @@
+{
+    "scope": "",
+    "rules": [
+        ["key", "(control=ctrl | alt=alt)"]
+    ],
+    "conditions": {
+    },
+    "commands": [
+        ["reload command modules", "osspeak.reload()"],
+        ["do that again <optional_number>", "repeat(history.last(), $1)"],
+        ["banana phone", "async(wtf, wait(10), bar)"]
+    ],
+    "functions": [
+        ["navigateTo(url)", "{ctrl+l}$url{enter}"]
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "scope": "poe",
+    "rules": [
+    ],
+    "conditions": {
+        "title": "pillars of eternity"
+    },
+    "commands": [
+    ],
+    "functions": [
+        ["char1()", "list(40, 725)"],
+        ["char2()", "list(125, 725)"],
+        ["char3()", "list(210, 725)"],
+        ["centerPos()", "list(681, 386)"]
+    ]
+}

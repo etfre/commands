@@ -1,0 +1,15 @@
+{
+    "scope": "",
+    "rules": [
+        ["clip", "(cut={ctrl+x} | copy={ctrl+c})"]
+    ],
+    "conditions": {},
+    "commands": [
+        [
+            "<clip> that",
+            "$1"
+        ],
+        ["paste <optional_number>", "repeat({ctrl+v}, $1)"]
+    ],
+    "functions": []
+}

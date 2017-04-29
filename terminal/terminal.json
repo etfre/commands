@@ -1,0 +1,35 @@
+{
+    "functions": [
+    ],
+    "rules": [
+    ],
+    "conditions": {
+        "title": "evan@evan-pc"
+    },
+    "commands": [
+        [
+            "climb <optional_number>",
+            "'cd ' repeat('../', $1) {enter}"
+        ],
+        [
+            "list files",
+            "'ls | cat -n'{enter}"
+        ],
+        ["drop <digit>_1-", "extensions.run(osspeak_modules.terminal.terminal, term) extensions.call(term, drop, $1)"],
+        ["tab (left=pageup | right=pagedown) <optional_number>", "repeat({ctrl+$1}, $2)"],
+        ["new tab", "{ctrl+shift+t}"],
+        ["close tab", "{ctrl+shift+w}"],
+        ["make dir", "'mkdir '"],
+        ["open directory", "'code .'{enter}"],
+        ["remove directory", "'rm -rf '"],
+        ["remove file", "'rm  '"],
+        ["touch", "'touch '"],
+        ["touch git ignore", "'touch .gitignore'{enter}"],
+        ["go to modules", "'cd /mnt/c/Users/evan/modules'{enter}"],
+        ["go to rpg", "'cd C:/Users/evan/modules/rpg'{enter}"],
+        ["go to newsflix", "'cd /mnt/c/Users/evan/modules/newsflix'{enter}venvActivate()"],
+        ["rm minus rf", "'rm -rf '"]
+        
+    ],
+    "scope": "bash"
+}

@@ -1,0 +1,38 @@
+{
+    "functions": [
+        ["flyStart()", "{ctrl+f1}"],
+        ["flyEnd()", "{ctrl+f2}"]
+    ],
+    "rules": [
+        [
+            "direction",
+            "(north=up | east=right | south=down | west=left)"
+        ]
+    ],
+    "conditions": {
+        "title": "Visual Studio Code"
+    },
+    "commands": [
+        [
+            "fuzzy",
+            "{ctrl+p}"
+        ],
+        ["save", "{ctrl+s}"],
+        ["new file", "{ctrl+alt+n}wait(.2){right}"],
+        ["select line <optional_number>", "repeat({ctrl+i}, $1)"],
+        ["line <digit>_1-", "{ctrl+g}$1{enter}"],
+        ["undo <digit>_0-", "repeat({ctrl+z}, $1)"],
+        ["redo <digit>_0-", "repeat({ctrl+y}, $1)"],
+        ["smart (grow=right | shrink=left) <optional_number>", "repeat({shift+alt+$1}, $2)"],
+        ["flip (north=up | south=down) <optional_number>", "repeat({alt+$1}, $2)"],
+        ["duplicate (north=up | south=down) <optional_number>", "repeat({shift+alt+$1}, $2)"],
+        ["search <letter>", "{ctrl+f}$1{enter}"],
+        ["indent <optional_number>", "repeat({ctrl+']'}, $1)"],
+        ["outdent <optional_number>", "repeat({ctrl+'['}, $1)"],
+        ["new line", "{ctrl+enter}"],
+        ["new line above", "{ctrl+shift+enter}"],
+        ["multi cursor <optional_number>", "repeat({ctrl+d}, $1)"],
+        ["waffle house", "{shift+left}"]
+    ],
+    "scope": "vscode"
+}

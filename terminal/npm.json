@@ -1,0 +1,19 @@
+{
+    "functions": [
+    ],
+    "rules": [
+    ],
+    "conditions": {
+        "title": "evan@evan-pc"
+    },
+    "commands": [
+        ["npm", "'npm '"],
+        ["install", "'install '"],
+        ["save dev", "'--save-dev '"],
+        ["save local", "'--save '"],
+        ["initialize", "'init -y'"],
+        ["run web pack", "'npm run wp' {enter}"]
+        
+    ],
+    "scope": "bash"
+}

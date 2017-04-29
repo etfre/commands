@@ -1,0 +1,25 @@
+{
+    "functions": [
+    ],
+    "rules": [],
+    "conditions": {},
+    "commands": [
+        [
+            "click",
+            "mouse.click()"
+        ],
+        [
+            "go there",
+            "mouse.move(500)"
+        ],
+        [
+            "mouse x",
+            "mouse.x()"
+        ],
+        [
+            "mouse y",
+            "mouse.y()"
+        ]
+    ],
+    "scope": ""
+}

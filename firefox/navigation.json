@@ -1,0 +1,21 @@
+{
+    "scope": "",
+    "conditions": {
+        "title": "Vimperator"
+    },
+    "rules": [
+    ],
+    "commands": [
+        ["link", "f"],
+        ["go back", "H"],
+        ["refresh", "{f5}"],
+        ["go to hacker news", "navigateTo(http://news.ycombinator.com)"],
+        ["go to google news", "navigateTo(http://news.google.com)"],
+        ["go to reddit", "navigateTo(http://reddit.com)"],
+        ["go to something awful", "navigateTo(http://forums.somethingawful.com)"]
+        
+    ],
+    "functions": [
+        ["navigateTo(url)", "{ctrl+l}$url{enter}"]
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "scope": "",
+    "rules": [],
+    "conditions": {
+        
+    },
+    "commands": [
+        [
+            "snipe <optional_number>",
+            "repeat({back}, $1)"
+        ],
+        [
+            "escape <optional_number>",
+            "repeat({esc}, $1)"
+        ],
+        [
+            "press tab <optional_number>",
+            "repeat({tab}, $1)"
+        ],
+        [
+            "delete <optional_number>",
+            "repeat({del}, $1)"
+        ],
+        [
+            "enter <optional_number>",
+            "repeat({enter}, $1)"
+        ],
+        [
+            "space <optional_number>",
+            "repeat({' '}, $1)"
+        ]
+    ],
+    "functions": []
+}

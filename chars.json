@@ -1,0 +1,63 @@
+{
+    "rules": [
+        [
+            "arrow",
+            "(up | right | down | left)"
+        ],
+        [
+            "digit",
+            "(0|1|2|3|4|5|6|7|8|9)"
+        ],
+        [
+            "operator",
+            "(plus=+ | equals='=' | minus='-' | times='*' | percent='%' | caret='^' | greater='>' | lesser='<')"
+        ],
+        [
+            "other_char",
+            "(comma=',' | lapping='(' | rapping=')' | space=' ' | flat='_' | double=\" | single=`'` | backtick='`' | lace='{' | race='}' | lack='[' | rack=']' | period='.' | slash='/' | backslash='\\' | semicolon=';' | colon=':' | pipe='|' | exclamation='!' | (at sign)='@' | (pound sign)='#' | dollar='$' | ampersand='&' | tilda='~')"
+        ],
+        [
+            "optional_number",
+            "<digit>_0-"
+        ],
+        [
+            "letter",
+            "(alpha=a| bravo=b | charlie=c | delta=d | elephant=e | foxtrot=f | golf=g | hotel=h | india=i | juliet=j | kilo=k | lima=l | michael=m | november=n | oscar=o | peter=p | quebec=q | romeo=r | sierra=s | tango=t | uniform=u | victor=v | whiskey=w | xray=x | yankee=y | zulu=z)"
+        ],
+        [
+            "char",
+            "(<letter> | <digit> | <operator> | <other_char>)"
+        ]
+    ],
+    "scope": "",
+    "commands": [
+        [
+            "<arrow> <optional_number>",
+            "repeat({$1}, $2)"
+        ],
+        [
+            "(hello world|goodbye universe)_2-",
+            "foob"
+        ],
+        [
+            "(<letter> | <other_char>) <optional_number>",
+            "repeat($-2, $-1)"
+        ],
+        [
+            "grow <letter> <optional_number>",
+            "text.upper(repeat($-2, $-1))"
+        ],
+        [
+            "number <digit>_1-",
+            "$1"
+        ],
+        ["press control <letter>", "{ctrl+$1}"]
+    ],
+    "conditions": {},
+    "functions": [
+        [
+            "repeat(word)",
+            "$word"
+        ]
+    ]
+}

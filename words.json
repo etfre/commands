@@ -1,0 +1,14 @@
+{
+    "functions": [
+    ],
+    "rules": [
+    ],
+    "conditions": {},
+    "commands": [
+        [
+            "literal <_dictate>",
+            "$1"
+        ]
+    ],
+    "scope": ""
+}

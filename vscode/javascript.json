@@ -1,0 +1,47 @@
+{
+    "scope": "vscode",
+    "rules": [
+        ["jsExport", "export=(spaceBack() export spaceForward())"],
+        ["jsImport", "import=(spaceBack() import spaceForward())"],
+        ["jsFrom", "from=(spaceBack() from spaceForward())"],
+        ["jsLet", "let=(let spaceForward())"],
+        ["jsConst", "const=(const spaceForward())"],
+        ["jsNew", "new=(new spaceForward())"],
+        ["jsThis", "this=this"],
+        ["jsDefault", "default=(spaceBack() default spaceForward())"],
+        ["jsIf", "if=(if {space} parentheses())"],
+        ["jsElse", "else=(else spaceForward() brackets())"],
+        ["jsAnd", "and=&&"],
+        ["jsOr", "or='||'"],
+        ["jsBreak", "break=break"],
+        ["jsContinue", "continue=continue"],
+        ["jsReturn", "return=return"],
+        ["jsTrue", "true=true"],
+        ["jsUndefined", "undefined=undefined"],
+        ["jsNull", "null=null"],
+        ["jsString", "string=(`''`{left})"],
+        ["jsPrint", "print=('console.log()'{left})"],
+        ["jsCall", "call=('()' {left})"],
+        ["jsScope", "scope=(brackets())"],
+        ["jsForRange", "forrange=('for ' parentheses() 'let i = 0; i < ; i++' repeat({left}, 5))"],
+        ["jsForOf", "forof=('for ' parentheses() 'let  of ' clipboard.get() repeat({left}, text.length(clipboard.get())) repeat({left}, 4))"],
+        ["jsKeyword", "(<jsFrom> | <jsNull> | <jsUndefined> | <jsLet> | <jsBreak> | <jsContinue> | <jsReturn> | <jsNew> | <jsThis> | <jsConst> | <jsForOf> | <jsExport> | <jsImport> | <jsDefault> | <jsIf> | <jsAnd> | <jsOr> | <jsTrue> | <jsCall> | <jsScope> | <jsPrint> | <jsString> | <jsElse> | <jsForRange>)"]
+    ],
+    "conditions": {
+        "state": "language == 'javascript'"
+    },
+    "commands": [
+        [
+            "new function",
+            "`function() { }`"
+        ],
+        [
+            "js <jsKeyword>_1-",
+            "$1"
+        ]
+    ],
+    "functions": [
+        ["brackets()", "('{}' {left}{enter})"],
+        ["parentheses()", "('()' {left})"]
+    ]
+}

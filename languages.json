@@ -1,0 +1,22 @@
+{
+    "scope": "",
+    "rules": [],
+    "initialState": {
+        "language": "'python'"
+    },
+    "commands": [
+        [
+            "language javascript",
+            "state.set('language', 'javascript')"
+        ],
+        [
+            "language python",
+            "state.set('language', 'python')"
+        ],
+        [
+            "echo current language",
+            "`Current language is: ` state.get('language')"
+        ]
+    ],
+    "functions": []
+}
