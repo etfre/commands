@@ -15,7 +15,7 @@
             "list files",
             "'ls | cat -n'{enter}"
         ],
-        ["drop <digit>_1-", "extensions.run(osspeak_modules.terminal.terminal, term) extensions.call(term, drop, $1)"],
+        ["drop <digit>_1-", "extensions.run(terminal.terminal, term) extensions.call(term, drop, $1)"],
         ["tab (left=pageup | right=pagedown) <optional_number>", "repeat({ctrl+$1}, $2)"],
         ["new tab", "{ctrl+shift+t}"],
         ["close tab", "{ctrl+shift+w}"],

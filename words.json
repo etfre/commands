@@ -8,7 +8,16 @@
         [
             "literal <_dictate>",
             "$1"
+        ],
+        [
+            "capital <_dictate>",
+            "text.pascalCase($1)"
+        ],
+        [
+            "camel <_dictate>",
+            "text.camelCase($1)"
         ]
+
     ],
     "scope": ""
 }

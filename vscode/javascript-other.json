@@ -1,0 +1,17 @@
+{
+    "scope": "vscode",
+    "rules": [
+    ],
+    "conditions": {
+        "state": "language == 'javascript'"
+    },
+    "commands": [
+        ["import react", "`import * as React from 'react';`"],
+        ["import react dom", "`import * as ReactDOM from 'react-dom';`"],
+        ["import skeleton", "`import  from '';` repeat({left}, 9)"]
+    ],
+    "functions": [
+        ["brackets()", "('{}' {left}{enter})"],
+        ["parentheses()", "('()' {left})"]
+    ]
+}
