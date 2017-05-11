@@ -2,7 +2,7 @@
     "scope": "vscode",
     "rules": [],
     "conditions": {
-        "state": "language == 'python'"
+        "state": "language == 'piethon'"
     },
     "commands": [
         [
@@ -13,21 +13,21 @@
             "new method",
             "`def (self):` repeat({left}, 7)"
         ],
-        ["py import", "import spaceForward()"],
-        ["py dunder", "'____' repeat({left}, 2)"],
-        ["py from", "from spaceForward()"],
-        ["py self", "self"],
-        ["py return", "return spaceForward()"],
-        ["py class", "'class :'{left}"],
-        ["py yield", "yield spaceForward()"],
-        ["py continue", "continue"],
-        ["py break", "break"],
-        ["py with", "with spaceForward()"],
-        ["py true", "True"],
-        ["py false", "False"],
-        ["py if", "`if :` {left}"], 
-        ["py else if", "`elif :` {left}"], 
-        ["py else", "`else:` {enter}"], 
+        ["pie import", "import spaceForward()"],
+        ["pie dunder", "'____' repeat({left}, 2)"],
+        ["pie from", "from spaceForward()"],
+        ["pie self", "self"],
+        ["pie return", "return spaceForward()"],
+        ["pie class", "'class :'{left}"],
+        ["pie yield", "yield spaceForward()"],
+        ["pie continue", "continue"],
+        ["pie break", "break"],
+        ["pie with", "with spaceForward()"],
+        ["pie true", "True"],
+        ["pie false", "False"],
+        ["pie if", "`if :` {left}"], 
+        ["pie else if", "`elif :` {left}"], 
+        ["pie else", "`else:` {enter}"], 
         ["for iterable", "`for  in `clipboard.get(): repeat({left}, text.length(clipboard.get())) repeat({left}, 5)"],
         ["for enumerate", "`for i,  in enumerate(` clipboard.get() `):` repeat({left}, text.length(clipboard.get())) repeat({left}, 16)"]
     ],

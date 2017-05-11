@@ -22,7 +22,7 @@
         ],
         [
             "letter",
-            "(alpha=a| bravo=b | charlie=c | delta=d | elephant=e | foxtrot=f | golf=g | hotel=h | india=i | juliet=j | kilo=k | lima=l | michael=m | november=n | oscar=o | peter=p | quebec=q | romeo=r | sierra=s | tango=t | uniform=u | victor=v | whiskey=w | xray=x | yankee=y | zulu=z)"
+            "(alpha=a| bravo=b | charlie=c | delta=d | eureka=e | foxtrot=f | golf=g | hotel=h | india=i | juliet=j | kilo=k | lima=l | michael=m | november=n | oscar=o | peter=p | quiet=q | romeo=r | sierra=s | tango=t | uniform=u | victor=v | whiskey=w | xray=x | yankee=y | zulu=z)"
         ],
         [
             "char",

@@ -1,7 +1,8 @@
 {
     "functions": [
         ["flyStart()", "{ctrl+f1}"],
-        ["flyEnd()", "{ctrl+f2}"]
+        ["flyEnd()", "{ctrl+f2}"],
+        ["snippet(path)", "state.set(temp, clipboard.get()) wait(.2) clipboard.set(file.read($path)) wait(.2) {ctrl+v} wait(.2) clipboard.set(state.get(temp))"]
     ],
     "rules": [
         [
@@ -23,10 +24,12 @@
         ["line <digit>_1-", "{ctrl+g}$1{enter}"],
         ["undo <digit>_0-", "repeat({ctrl+z}, $1)"],
         ["redo <digit>_0-", "repeat({ctrl+y}, $1)"],
-        ["smart (grow=right | shrink=left) <optional_number>", "repeat({shift+alt+$1}, $2)"],
+        ["(expand=right | collapse=left) <optional_number>", "repeat({shift+alt+$1}, $2)"],
         ["flip (north=up | south=down) <optional_number>", "repeat({alt+$1}, $2)"],
         ["duplicate (north=up | south=down) <optional_number>", "repeat({shift+alt+$1}, $2)"],
         ["search", "{ctrl+f}"],
+        ["ascend <optional_number>", "repeat({pageup}, $1)"],
+        ["descend <optional_number>", "repeat({pagedown}, $1)"],
         ["indent <optional_number>", "repeat({ctrl+']'}, $1)"],
         ["outdent <optional_number>", "repeat({ctrl+'['}, $1)"],
         ["new line <optional_number>", "repeat({ctrl+enter}, $1)"],

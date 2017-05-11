@@ -8,7 +8,9 @@
     "commands": [
         ["import react", "`import * as React from 'react';`"],
         ["import react dom", "`import * as ReactDOM from 'react-dom';`"],
-        ["import skeleton", "`import  from '';` repeat({left}, 9)"]
+        ["import skeleton", "`import  from '';` repeat({left}, 9)"],
+        ["redux connect", "file.read('vscode\\snippets\\redux-connect.ts'){left}"],
+        ["new react component", "snippet('vscode\\snippets\\new-react-component.tsx') {left} repeat({ctrl+d}, 2) {back}"]
     ],
     "functions": [
         ["brackets()", "('{}' {left}{enter})"],
