@@ -1,12 +1,13 @@
-function mapStateToProps() {
+function mapStateToProps(state: any) {
+    return {
 
+    }
 }
 
-function mapPropsToDispatch() {
+function mapDispatchToProps(dispatch: any) {
+    return {
 
+    }
 }
 
-export default connect(
-    mapStateToProps,
-    mapPropsToDispatch
-)()
+export default connect(mapStateToProps, mapDispatchToProps)()
