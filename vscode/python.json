@@ -2,7 +2,7 @@
     "scope": "vscode",
     "rules": [],
     "conditions": {
-        "state": "language == 'piethon'"
+        "state": "language == 'python'"
     },
     "commands": [
         [
