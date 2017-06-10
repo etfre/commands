@@ -1,0 +1,31 @@
+{
+    "scope": "studio",
+    "rules": [
+        ["csPublic", "public='public '"],
+        ["csStatic", "static='static '"],
+        ["csvoid", "void='void '"],
+        ["csclass", "class='class '"],
+        ["csnamespace", "namespace='namespace '"],
+        ["csusing", "using='using '"],
+        ["csvar", "var='var '"],
+        ["csnew", "new='new '"],
+        ["csKeyword", "(<csusing> | <csvar> | <csnew> | <csPublic> | <csStatic> | <csvoid> | <csclass> | <csnamespace>)"]
+    ],
+    "conditions": {
+        "title": "Microsoft Visual Studio"
+    },
+    "commands": [
+        [
+            "new function",
+            "`function() { }`"
+        ],
+        [
+            "sharp <csKeyword>_1-",
+            "place($1)"
+        ]
+    ],
+    "functions": [
+        ["brackets()", "('{}' {left}{enter})"],
+        ["parentheses()", "('()' {left})"]
+    ]
+}

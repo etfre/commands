@@ -3,7 +3,8 @@
     "rules": [
     ],
     "conditions": {
-        "state": "language == 'javascript'"
+        "state": "language == 'javascript'",
+        "title": "Visual Studio Code"
     },
     "commands": [
         ["import react", "`import * as React from 'react';`"],

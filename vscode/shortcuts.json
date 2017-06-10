@@ -6,6 +6,8 @@
     },
     "commands": [
         ["parentheses", "`()`"],
+        ["blocks", "`[]`"],
+        ["braces", "`{}`"],
         ["html tag", "`<>`{left}"],
         ["open recent", "{ctrl+r}"],
         ["file explorer", "{ctrl+shift+e}"],

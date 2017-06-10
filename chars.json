@@ -14,7 +14,7 @@
         ],
         [
             "other_char",
-            "(comma=',' | lapping='(' | rapping=')' | space=' ' | flat='_' | double=\" | single=`'` | backtick='`' | lace='{' | race='}' | lack='[' | rack=']' | period='.' | slash='/' | backslash='\\' | semicolon=';' | colon=':' | vertical='|' | exclamation='!' | (at sign)='@' | (pound sign)='#' | dollar='$' | ampersand='&' | tilda='~')"
+            "(comma=',' | lapping='(' | rapping=')' | space=' ' | flat='_' | double=\" | single=`'` | backtick='`' | honey='{' | badger='}' | lack='[' | rack=']' | period='.' | slash='/' | backslash='\\' | semicolon=';' | colon=':' | vertical='|' | exclamation='!' | (at sign)='@' | (pound sign)='#' | dollar='$' | ampersand='&' | tilda='~')"
         ],
         [
             "optional_number",

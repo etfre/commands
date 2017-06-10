@@ -1,4 +1,7 @@
 {
+    "conditions": {
+        "title": "Visual Studio Code"
+    },
     "functions": [
         ["flystart()", "{ctrl+f1}"],
         ["flyend()", "{ctrl+f2}"],
@@ -9,17 +12,18 @@
     "rules": [
         ["clipboard", "(cut={ctrl+x} | copy={ctrl+c} | select='')"],
         ["motion", "(until=t | after=f | before=F | retreat=T)"],
-        ["flydirection", "(north=w | west=a | south=s | east=d | first=f | final=l | genesis=z | apocalypse=e)"]
+        ["flydirection", "(north=w | west=a | south=s | east=d | first=f | final=l | genesis=z | apocalypse=e)"],
+        ["textobject", "(word={ctrl+d} | everything={ctrl+a})"]
     ],
     "commands": [
         ["<motion> <char> <optional_number>", "flystart() $-1 'f' $1$-2 'c' flyend()"],
-        ["<clipboard> <motion> <char> <optional_number>", "flystart() $-1 'f' $2$-2 's' flyend() $1"],
+        ["<clipboard> <motion> <char> <optional_number>", "flystart() $-1 'f' $2$-2 's' flyend() wait(.2) $1"],
         ["<flydirection> <optional_number>", "flystart() $2 'd' $1 'c' flyend()"],
-        ["<clipboard> <flydirection> <optional_number>", "flystart() $3 'd' $2 's' flyend() $1"],
+        ["<clipboard> <flydirection> <optional_number>", "flystart() $3 'd' $2 's' flyend() wait(.2) $1"],
         ["<operator>", "spaceAround($1)"],
         ["short <operator> <optional_number>", "repeat($1, $2)"],
         ["new arg", "',' spaceForward()"],
-        ["<clipboard> word", "{esc}{ctrl+d}wait(.3)$1 wait(.3){esc}"]
+        ["<clipboard> <textobject>", "{esc}$2wait(.3)$1 wait(.3)"]
     ],
     "scope": "vscode"
 }

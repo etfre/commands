@@ -1,0 +1,24 @@
+{
+    "conditions": {
+        "title": "Microsoft Visual Studio"
+    },
+    "functions": [
+        ["flystart()", "{ctrl+f1}"],
+        ["flyend()", "{ctrl+f2}"],
+        ["spaceBack()", "flystart() 'sb' flyend()"],
+        ["spaceForward()", "flystart() 'sf' flyend()"],
+        ["spaceAround(char)", "spaceBack() $char spaceForward()"]
+    ],
+    "rules": [
+        ["clipboard", "(cut={ctrl+x} | copy={ctrl+c} | select='')"],
+        ["wordmotion", "(fall=left | spring=right | final=end | first=home)"],
+        ["motion", "(until=t | after=f | before=F | retreat=T)"],
+        ["flydirection", "(north=w | west=a | south=s | east=d | first=f | final=l | genesis=z | apocalypse=e)"]
+    ],
+    "commands": [
+        ["<clipboard> <arrow> <optional_number>", "repeat({shift+$2}, $3) $1"],
+        ["<clipboard> <wordmotion> <optional_number>", "repeat({ctrl+shift+$2}, $3) $1"],
+        ["<wordmotion> <optional_number>", "repeat({ctrl+$1}, $2)"]
+    ],
+    "scope": "studio"
+}

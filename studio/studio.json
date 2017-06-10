@@ -1,0 +1,37 @@
+{
+    "functions": [
+        ["flyStart()", "{ctrl+f1}"],
+        ["flyEnd()", "{ctrl+f2}"],
+        ["place(value)", "state.set(temp, clipboard.get()) wait(.1) clipboard.set($value) wait(.1) {ctrl+v} wait(.1) clipboard.set(state.get(temp))"]
+    ],
+    "rules": [
+        [
+            "direction",
+            "(north=up | east=right | south=down | west=left)"
+        ]
+    ],
+    "conditions": {
+        "title": "Microsoft Visual Studio"
+    },
+    "commands": [
+        [
+            "fuzzy",
+            "{ctrl+p}"
+        ],
+        ["save", "{ctrl+s}"],
+        ["line <digit>_1-", "{ctrl+g}$1{enter}"],
+        ["undo <digit>_0-", "repeat({ctrl+z}, $1)"],
+        ["redo <digit>_0-", "repeat({ctrl+y}, $1)"],
+        ["flip (north=up | south=down) <optional_number>", "repeat({alt+$1}, $2)"],
+        ["duplicate (north=up | south=down) <optional_number>", "repeat({shift+alt+$1}, $2)"],
+        ["search", "{ctrl+f}"],
+        ["ascend <optional_number>", "repeat({pageup}, $1)"],
+        ["descend <optional_number>", "repeat({pagedown}, $1)"],
+        ["indent <optional_number>", "repeat({ctrl+']'}, $1)"],
+        ["outdent <optional_number>", "repeat({ctrl+'['}, $1)"],
+        ["new line above <optional_number>", "repeat({ctrl+enter}, $1)"],
+        ["new line <optional_number>", "repeat({ctrl+shift+enter}, $1)"],
+        ["multi cursor <optional_number>", "repeat({ctrl+d}, $1)"]
+    ],
+    "scope": "studio"
+}

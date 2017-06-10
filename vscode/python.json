@@ -2,7 +2,8 @@
     "scope": "vscode",
     "rules": [],
     "conditions": {
-        "state": "language == 'python'"
+        "state": "language == 'python'",
+        "title": "Visual Studio Code"
     },
     "commands": [
         [

@@ -15,6 +15,10 @@
             "pillars='Pillars of Eternity'"
         ],
         [
+            "studio",
+            "studio='microsoft visual studio'"
+        ],
+        [
             "code",
             "code='Visual Studio Code'"
         ],
@@ -29,7 +33,7 @@
         ["terminal", "terminal='Terminal of Evan'"],
         [
             "windows",
-            "(<chrome> | <pillars> | <code> | <terminal> | <bash> | <media>)"
+            "(<chrome> | <pillars> | <code> | <terminal> | <bash> | <media> | <studio>)"
         ]
     ],
     "conditions": {},
@@ -49,8 +53,10 @@
         ],
         ["start terminal", "{ctrl+alt+t}"],
         ["start bash", "start('C:\\Users\\evan\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\bash')"],
+        ["start studio", "start('C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\IDE\\devenv.exe')"],
         ["start code", "shell(code)"],
         ["start chrome", "shell('start chrome')"],
+        ["restart wifi", "async(shell('netsh wlan connect MyWifi123'))"],
         ["switch to bash", "bash {enter}"]
     ],
     "scope": ""
