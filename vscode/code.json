@@ -18,6 +18,7 @@
             "fuzzy",
             "{ctrl+p}"
         ],
+        ["go to definition", "{f12}"],
         ["save", "{ctrl+s}"],
         ["new file", "{ctrl+alt+n}wait(.2){right}"],
         ["select line <optional_number>", "repeat({ctrl+i}, $1)"],

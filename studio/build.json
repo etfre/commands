@@ -1,0 +1,14 @@
+{
+    "functions": [
+    ],
+    "rules": [
+    ],
+    "conditions": {
+        "title": "Microsoft Visual Studio"
+    },
+    "commands": [
+        ["start debugging", "{f5}"],
+        ["stop debugging", "{shift+f5}"]
+    ],
+    "scope": "studio"
+}

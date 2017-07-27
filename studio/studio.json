@@ -19,6 +19,10 @@
             "{ctrl+p}"
         ],
         ["save", "{ctrl+s}"],
+        ["tab left", "{ctrl+'-'}"],
+        ["tab right", "{ctrl+shift+'-'}"],
+        ["(outdent=left | indent=right)", "{shift+alt+$1}"],
+        ["full screen", "{shift+alt+enter}"],
         ["line <digit>_1-", "{ctrl+g}$1{enter}"],
         ["undo <digit>_0-", "repeat({ctrl+z}, $1)"],
         ["redo <digit>_0-", "repeat({ctrl+y}, $1)"],
@@ -27,11 +31,10 @@
         ["search", "{ctrl+f}"],
         ["ascend <optional_number>", "repeat({pageup}, $1)"],
         ["descend <optional_number>", "repeat({pagedown}, $1)"],
-        ["indent <optional_number>", "repeat({ctrl+']'}, $1)"],
-        ["outdent <optional_number>", "repeat({ctrl+'['}, $1)"],
         ["new line above <optional_number>", "repeat({ctrl+enter}, $1)"],
         ["new line <optional_number>", "repeat({ctrl+shift+enter}, $1)"],
-        ["multi cursor <optional_number>", "repeat({ctrl+d}, $1)"]
+        ["<operator>", "' ' $1 ' '"],
+        ["short <operator> <optional_number>", "repeat($1, $2)"]
     ],
     "scope": "studio"
 }

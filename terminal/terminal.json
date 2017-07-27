@@ -26,7 +26,7 @@
         ["touch", "'touch '"],
         ["touch git ignore", "'touch .gitignore'{enter}"],
         ["go to modules", "'cd /mnt/c/Users/evan/modules'{enter}"],
-        ["go to rpg", "'cd C:/Users/evan/modules/rpg'{enter}"],
+        ["go to projects", "'cd /mnt/c/Users/evan/projects'{enter}"],
         ["go to newsflix", "'cd /mnt/c/Users/evan/modules/newsflix'{enter}venvActivate()"],
         ["rm minus rf", "'rm -rf '"]
         
