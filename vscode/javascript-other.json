@@ -13,7 +13,7 @@
         ["this state", "'this.state.'"],
         ["import skeleton", "'import  from '';' repeat({left}, 9)"],
         ["redux connect", "file.read('vscode\\snippets\\redux-connect.ts'){left}"],
-        ["react new component", "snippet('vscode\\snippets\\new-react-component.tsx') {left} repeat({ctrl+d}, 2) {back}"]
+        ["react new component", "snippet('vscode\\snippets\\new-react-component.tsx') {left} repeat({ctrl, d}, 2) {back}"]
     ],
     "functions": [
         ["brackets()", "'{}' {left}{enter}"],

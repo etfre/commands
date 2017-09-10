@@ -5,16 +5,16 @@
     "functions": [
     ],
     "rules": [
-        ["clipboard", "(cut={ctrl+x} | copy={ctrl+c} | select='')"],
+        ["clipboard", "(cut={ctrl, x} | copy={ctrl, c} | select='')"],
         ["wordmotion", "(fall=left | spring=right | final=end | first=home)"],
         ["motion", "(until=t | after=f | before=F | retreat=T)"],
-        ["textobject", "(word={ctrl+w})"],
+        ["textobject", "(word={ctrl, w})"],
         ["flydirection", "(north=w | west=a | south=s | east=d | first=f | final=l | genesis=z | apocalypse=e)"]
     ],
     "commands": [
-        ["<clipboard> <arrow> <optional_number>", "repeat({shift+$2}, $3) $1"],
-        ["<clipboard> <wordmotion> <optional_number>", "repeat({ctrl+shift+$2}, $3) $1"],
-        ["<wordmotion> <optional_number>", "repeat({ctrl+$1}, $2)"],
+        ["<clipboard> <arrow> <optional_number>", "repeat({shift, $2}, $3) $1"],
+        ["<clipboard> <wordmotion> <optional_number>", "repeat({ctrl, shift, $2}, $3) $1"],
+        ["<wordmotion> <optional_number>", "repeat({ctrl, $1}, $2)"],
         ["<clipboard> <textobject> <optional_number>", "repeat( $2, $1, $3)"]
     ],
     "scope": "studio"

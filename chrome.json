@@ -5,7 +5,7 @@
         "title": "Google Chrome"
     },
     "commands": [
-        ["new tab", "{ctrl+t}"],
+        ["new tab", "{ctrl, t}"],
         ["tab left <optional_number>", "repeat({ctrl, pageup}, $1)"],
         ["tab right <optional_number>", "repeat({ctrl, pagedown}, $1)"],
         ["close tab <optional_number>", "repeat({ctrl, w}, $1)"],

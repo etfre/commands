@@ -1,8 +1,8 @@
 {
     "functions": [
-        ["flyStart()", "{ctrl+f1}"],
-        ["flyEnd()", "{ctrl+f2}"],
-        ["place(value)", "state.set(temp, clipboard.get()) wait(.1) clipboard.set($value) wait(.1) {ctrl+v} wait(.1) clipboard.set(state.get(temp))"]
+        ["flyStart()", "{ctrl, f1}"],
+        ["flyEnd()", "{ctrl, f2}"],
+        ["place(value)", "state.set(temp, clipboard.get()) wait(.1) clipboard.set(value) wait(.1) {ctrl, v} wait(.1) clipboard.set(state.get(temp))"]
     ],
     "rules": [
         [

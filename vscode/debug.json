@@ -6,9 +6,9 @@
     },
     "commands": [
         ["debug play", "{f5}"],
-        ["debug stop", "{shift+f5}"],
+        ["debug stop", "{shift, f5}"],
         ["debug pause", "{f6}"],
-        ["debug restart", "{ctrl+shift+f5}"]
+        ["debug restart", "{ctrl, shift, f5}"]
     ],
     "functions": []
 }

@@ -3,17 +3,17 @@
         "title": "Visual Studio Code"
     },
     "functions": [
-        ["flystart()", "{ctrl+f1}"],
-        ["flyend()", "{ctrl+f2}"],
+        ["flystart()", "{ctrl, f1}"],
+        ["flyend()", "{ctrl, f2}"],
         ["spaceBack()", "flystart() 'sb' flyend()"],
         ["spaceForward()", "flystart() 'sf' flyend()"],
         ["spaceAround(char)", "spaceBack() char spaceForward()"]
     ],
     "rules": [
-        ["clipboard", "(cut={ctrl+x} | copy={ctrl+c} | select='')"],
+        ["clipboard", "(cut={ctrl, x} | copy={ctrl, c} | select='')"],
         ["motion", "(until=t | after=f | before=F | retreat=T)"],
         ["flydirection", "(north=w | west=a | south=s | east=d | first=f | final=l | genesis=z | apocalypse=e)"],
-        ["textobject", "(word={ctrl+d} | everything={ctrl+a})"]
+        ["textobject", "(word={ctrl, d} | everything={ctrl, a})"]
     ],
     "commands": [
         ["<motion> <char> <optional_number>", "flystart() $-1 'f' $1$-2 'c' flyend()"],

@@ -51,7 +51,7 @@
             "number <digit>_1-",
             "$1"
         ],
-        ["press control <letter>", "{ctrl+$1}"]
+        ["press control <letter>", "{ctrl, $1}"]
     ],
     "conditions": {},
     "functions": [
