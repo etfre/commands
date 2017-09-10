@@ -7,7 +7,7 @@
         ["flyend()", "{ctrl+f2}"],
         ["spaceBack()", "flystart() 'sb' flyend()"],
         ["spaceForward()", "flystart() 'sf' flyend()"],
-        ["spaceAround(char)", "spaceBack() $char spaceForward()"]
+        ["spaceAround(char)", "spaceBack() char spaceForward()"]
     ],
     "rules": [
         ["clipboard", "(cut={ctrl+x} | copy={ctrl+c} | select='')"],

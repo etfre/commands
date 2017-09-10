@@ -1,21 +1,18 @@
 {
     "scope": "",
     "rules": [],
-    "conditions": {
-        "title": "Visual Studio Code"
-    },
     "commands": [
-        ["parentheses", "`()`"],
-        ["blocks", "`[]`"],
-        ["braces", "`{}`"],
-        ["html tag", "`<>`{left}"],
-        ["open recent", "{ctrl+r}"],
-        ["file explorer", "{ctrl+shift+e}"],
-        ["project search", "{ctrl+shift+f}"],
-        ["source control", "{ctrl+shift+g}"],
-        ["tab (left=pageup | right=pagedown) <optional_number>", "repeat({ctrl+$1}, $2)"],
-        ["close tab <optional_number>", "repeat({ctrl+w}, $1)"],
-        ["toggle comment", "{ctrl+'/'}"]
+        ["parentheses", "'()'"],
+        ["blocks", "'[]'"],
+        ["braces", "'{}'"],
+        ["html tag", "'<>' {left}"],
+        ["open recent", "{ctrl, r}"],
+        ["file explorer", "{ctrl, shift, e}"],
+        ["project search", "keys(ctrl, shift, f)"],
+        ["source control", "keys(ctrl, shift, g)"],
+        ["tab (left=pageup | right=pagedown) <optional_number>", "repeat(keys(ctrl, $1), $2)"],
+        ["close tab <optional_number>", "repeat(keys(ctrl, w), $1)"],
+        ["toggle comment", "[ctrl, '/']"]
     ],
     "functions": []
 }

@@ -11,6 +11,6 @@
         ["banana phone", "async(wtf, wait(10), bar)"]
     ],
     "functions": [
-        ["navigateTo(url)", "{ctrl+l}$url{enter}"]
+        ["navigateTo(url)", "{ctrl, l}url{enter}"]
     ]
 }

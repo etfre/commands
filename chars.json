@@ -10,11 +10,11 @@
         ],
         [
             "operator",
-            "(plus=+ | equals='=' | minus='-' | times='*' | percent='%' | caret='^' | greater='>' | lesser='<')"
+            "(plus='+' | equals='=' | minus='-' | times='*' | percent='%' | caret='^' | greater='>' | lesser='<')"
         ],
         [
             "other_char",
-            "(comma=',' | lapping='(' | rapping=')' | space=' ' | flat='_' | double=\" | single=`'` | backtick='`' | honey='{' | badger='}' | lack='[' | rack=']' | period='.' | slash='/' | backslash='\\' | semicolon=';' | colon=':' | vertical='|' | exclamation='!' | (at sign)='@' | (pound sign)='#' | dollar='$' | ampersand='&' | tilda='~')"
+            "(backslash='\\\\\\\\' | semicolon=';')"
         ],
         [
             "optional_number",
@@ -55,9 +55,5 @@
     ],
     "conditions": {},
     "functions": [
-        [
-            "repeat(word)",
-            "$word"
-        ]
     ]
 }

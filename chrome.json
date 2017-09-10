@@ -6,26 +6,26 @@
     },
     "commands": [
         ["new tab", "{ctrl+t}"],
-        ["tab left <optional_number>", "repeat({ctrl+pageup}, $1)"],
-        ["tab right <optional_number>", "repeat({ctrl+pagedown}, $1)"],
-        ["close tab <optional_number>", "repeat({ctrl+w}, $1)"],
-        ["go back", "{alt+left}"],
-        ["go forward", "{alt+right}"],
+        ["tab left <optional_number>", "repeat({ctrl, pageup}, $1)"],
+        ["tab right <optional_number>", "repeat({ctrl, pagedown}, $1)"],
+        ["close tab <optional_number>", "repeat({ctrl, w}, $1)"],
+        ["go back", "{alt, left}"],
+        ["go forward", "{alt, right}"],
         ["refresh", "{f5}"],
         ["toggle devtools", "{f12}"],
         ["page top", "{home}"],
         ["page bottom", "{end}"],
-        ["navigate", "{ctrl+l}"],
-        ["search page", "{ctrl+f}"],
+        ["navigate", "{ctrl, l}"],
+        ["search page", "{ctrl, f}"],
         ["south <optional_number>", "repeat({pagedown}, $1)"],
         ["north <optional_number>", "repeat({pageup}, $1)"],
-        ["go to hacker news", "navigateTo(http://news.ycombinator.com)"],
-        ["go to google news", "navigateTo(http://news.google.com)"],
-        ["go to reddit", "navigateTo(http://reddit.com)"],
-        ["go to something awful", "navigateTo(http://forums.somethingawful.com)"],
+        ["go to hacker news", "navigateTo('http://news.ycombinator.com')"],
+        ["go to google news", "navigateTo('http://news.google.com')"],
+        ["go to reddit", "navigateTo('http://reddit.com')"],
+        ["go to something awful", "navigateTo('http://forums.somethingawful.com')"],
         ["go to local dev", "navigateTo('http://localhost:8000')"]
     ],
     "functions": [
-        ["navigateTo(url)", "{ctrl+l}wait(.2)$url wait(.2){enter}"]
+        ["navigateTo(url)", "{ctrl, l}wait(.2) url wait(.2){enter}"]
     ]
 }

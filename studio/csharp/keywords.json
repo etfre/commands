@@ -17,7 +17,7 @@
     "commands": [
         [
             "new function",
-            "`function() { }`"
+            "'function() { }'"
         ],
         [
             "sharp <csKeyword>_1-",
@@ -25,7 +25,7 @@
         ]
     ],
     "functions": [
-        ["brackets()", "('{}' {left}{enter})"],
-        ["parentheses()", "('()' {left})"]
+        ["brackets()", "'{}' {left}"],
+        ["parentheses()", "'()' {left}"]
     ]
 }

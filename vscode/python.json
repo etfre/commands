@@ -8,11 +8,11 @@
     "commands": [
         [
             "new function",
-            "`def ():` repeat({left}, 3)"
+            "'def ():' repeat({left}, 3)"
         ],
         [
             "new method",
-            "`def (self):` repeat({left}, 7)"
+            "'def (self):' repeat({left}, 7)"
         ],
         ["pie import", "import spaceForward()"],
         ["pie dunder", "'____' repeat({left}, 2)"],
@@ -26,11 +26,11 @@
         ["pie with", "with spaceForward()"],
         ["pie true", "True"],
         ["pie false", "False"],
-        ["pie if", "`if :` {left}"], 
-        ["pie else if", "`elif :` {left}"], 
-        ["pie else", "`else:` {enter}"], 
-        ["for iterable", "`for  in `clipboard.get(): repeat({left}, text.length(clipboard.get())) repeat({left}, 5)"],
-        ["for enumerate", "`for i,  in enumerate(` clipboard.get() `):` repeat({left}, text.length(clipboard.get())) repeat({left}, 16)"]
+        ["pie if", "'if :' {left}"], 
+        ["pie else if", "'elif :' {left}"], 
+        ["pie else", "'else:' {enter}"], 
+        ["for iterable", "f'for  in {clipboard.get()}:' repeat({left}, len(clipboard.get()) + 5)"],
+        ["for enumerate", "'for i,  in enumerate(' clipboard.get() '):' repeat({left}, len(clipboard.get()) + 16)"]
     ],
     "functions": []
 }

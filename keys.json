@@ -19,7 +19,7 @@
         ],
         [
             "delete <optional_number>",
-            "repeat({del}, $1)"
+            "repeat({'del'}, $1)"
         ],
         [
             "enter <optional_number>",

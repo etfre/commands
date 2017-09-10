@@ -16,17 +16,17 @@
         ["focus 3", "focusCharacter(char3())"],
         ["pause", "{space}"],
         ["quick save", "{f5}"],
-        ["north <digit>_1-", "mouse.move(0, eval(`$1 * -1`), 1)"],
-        ["northeast <digit>_1-", "mouse.move($1, eval(`$1 * -1`), 1)"],
+        ["north <digit>_1-", "mouse.move(0, int($1) * -1, 1)"],
+        ["northeast <digit>_1-", "mouse.move($1, int($1) * -1, 1)"],
         ["east <digit>_1-", "mouse.move($1, 0, 1)"],
         ["southeast <digit>_1-", "mouse.move($1, $1, 1)"],
         ["south <digit>_1-", "mouse.move(0, $1, 1)"],
-        ["southwest <digit>_1-", "mouse.move(eval(`$1 * -1`), $1, 1)"],
-        ["west <digit>_1-", "mouse.move(eval(`$1 * -1`), 0, 1)"],
-        ["northwest <digit>_1-", "mouse.move(eval(`$1 * -1`), eval(`$1 * -1`), 1)"]
+        ["southwest <digit>_1-", "mouse.move(int($1) * -1, $1, 1)"],
+        ["west <digit>_1-", "mouse.move(int($1) * -1, 0, 1)"],
+        ["northwest <digit>_1-", "mouse.move(int($1) * -1, int($1) * -1, 1)"]
     ],
     "functions": [
-        ["mouseMove(pos)", "mouse.move($pos[0], $pos[1])"],
-        ["focusCharacter(pos)", "mouseMove($pos) wait(.3) doubleClick() wait(.3) mouseMove(centerPos())"],
+        ["mouseMove(pos)", "mouse.move(pos[0], pos[1])"],
+        ["focusCharacter(pos)", "mouseMove(pos) wait(.3) doubleClick() wait(.3) mouseMove(centerPos())"],
         ["doubleClick()", "mouse.click() wait(.05) mouse.click()"]    ]
 }

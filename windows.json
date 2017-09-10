@@ -1,9 +1,5 @@
 {
     "functions": [
-        [
-            "repeat(word)",
-            "$word"
-        ]
     ],
     "rules": [
         [
@@ -38,6 +34,7 @@
     ],
     "conditions": {},
     "commands": [
+        ["banana hammock", "repeat({ctrl, a}, {esc}, 10)"],
         [
             "open <windows> <optional_number>",
             "window.focus($1, $2)"
@@ -51,13 +48,13 @@
             "start excel",
             "start('C:\\Program Files (x86)\\Microsoft VS Code\\Code.exe')"
         ],
-        ["start terminal", "{ctrl+alt+t}"],
-        ["start bash", "start('C:\\Users\\evan\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\bash')"],
+        ["start terminal", "keys(ctrl, alt, t)"],
+        ["start bash", "start(r'C:\\Users\\evan\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\bash')"],
         ["start studio", "start('C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\IDE\\devenv.exe')"],
         ["start code", "shell(code)"],
         ["start chrome", "shell('start chrome')"],
         ["restart wifi", "async(shell('netsh wlan connect MyWifi123'))"],
-        ["switch to bash", "bash {enter}"]
+        ["switch to bash", "bash keys(enter)"]
     ],
     "scope": ""
 }

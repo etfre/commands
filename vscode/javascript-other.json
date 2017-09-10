@@ -7,16 +7,16 @@
         "title": "Visual Studio Code"
     },
     "commands": [
-        ["import react", "`import * as React from 'react';`"],
-        ["import react dom", "`import * as ReactDOM from 'react-dom';`"],
+        ["import react", "'import * as React from 'react';'"],
+        ["import react dom", "'import * as ReactDOM from 'react-dom';'"],
         ["this props", "'this.props.'"],
         ["this state", "'this.state.'"],
-        ["import skeleton", "`import  from '';` repeat({left}, 9)"],
+        ["import skeleton", "'import  from '';' repeat({left}, 9)"],
         ["redux connect", "file.read('vscode\\snippets\\redux-connect.ts'){left}"],
         ["react new component", "snippet('vscode\\snippets\\new-react-component.tsx') {left} repeat({ctrl+d}, 2) {back}"]
     ],
     "functions": [
-        ["brackets()", "('{}' {left}{enter})"],
-        ["parentheses()", "('()' {left})"]
+        ["brackets()", "'{}' {left}{enter}"],
+        ["parentheses()", "'()' {left}"]
     ]
 }
