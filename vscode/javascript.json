@@ -9,26 +9,26 @@
         ["jsNew", "new=(new spaceForward())"],
         ["jsThis", "this=this"],
         ["jsDefault", "default=(spaceBack() default spaceForward())"],
-        ["jsIf", "if='if' [space] parentheses()"],
+        ["jsIf", "if='if' {space} parentheses()"],
         ["jsElse", "else=(else spaceForward() brackets())"],
         ["jsAnd", "and='&&'"],
         ["jsOr", "or='||'"],
-        ["jsBreak", "break=break"],
-        ["jsContinue", "continue=continue"],
-        ["jsReturn", "return=return"],
+        ["jsBreak", "break='break'"],
+        ["jsContinue", "continue='continue'"],
+        ["jsReturn", "return='return'"],
         ["jsTrue", "true=true"],
         ["jsUndefined", "undefined=undefined"],
         ["jsNull", "null=null"],
-        ["jsString", "string=\"''\" [left]"],
-        ["jsPrint", "print=console.log() [left]"],
-        ["jsCall", "call='()' [left]"],
+        ["jsString", "string=\"''\" {left}"],
+        ["jsPrint", "print=console.log() {left}"],
+        ["jsCall", "call='()' {left}"],
         ["jsScope", "scope=brackets()"],
-        ["jsForRange", "forrange='for ' parentheses() 'let i = 0; i < ; i++' [left] * 5"],
-        ["jsForOf", "forof='for ' parentheses() 'let  of ' clipboard.get() repeat([left], len(clipboard.get())) repeat([left], 4)"],
-        ["jsKeyword", "(<jsFrom> | <jsNull> | <jsUndefined> | <jsLet> | <jsBreak> | <jsContinue> | <jsReturn> | <jsNew> | <jsThis> | <jsConst> | <jsForOf> | <jsExport> | <jsImport> | <jsDefault> | <jsIf> | <jsAnd> | <jsOr> | <jsTrue> | <jsCall> | <jsScope> | <jsPrint> | <jsString> | <jsElse> | <jsForRange>)"]
+        ["jsForRange", "forrange='for ' parentheses() 'let i = 0; i < ; i++' repeat({left}, 5)"],
+        ["jsForOf", "forof='for ' parentheses() 'let  of ' clipboard.get() repeat({left}, len(clipboard.get())) repeat({left}, 4)"],
+        ["jsKeyword", "(<jsScope> | <jsElse> | <jsForRange>)"]
     ],
     "conditions": {
-        "state": "language == 'javascript'"
+        "state": "language == 'python'"
     },
     "commands": [
         [
@@ -37,11 +37,7 @@
         ],
         [
             "js <jsKeyword>_1-",
-            "$1"
+            "result.vars.get(1)"
         ]
-    ],
-    "functions": [
-        ["brackets()", "'{}' {left}{enter}"],
-        ["parentheses()", "'()' {left}"]
     ]
 }

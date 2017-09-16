@@ -15,7 +15,7 @@
         ],
         [
             "echo current language",
-            "`Current language is: ` state.get('language')"
+            "'Current language is: ' state.get('language')"
         ]
     ],
     "functions": []

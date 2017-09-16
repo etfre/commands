@@ -11,11 +11,11 @@
         ],
         [
             "capital <_dictate>",
-            "text.pascalCase($1)"
+            "text.pascal_case($1)"
         ],
         [
             "camel <_dictate>",
-            "text.camelCase($1)"
+            "text.camel_case($1)"
         ]
 
     ],
