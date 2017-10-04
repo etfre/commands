@@ -1,0 +1,21 @@
+{
+    "scope": "vscode",
+    "rules": [],
+    "conditions": {
+        "state": "language == 'python'",
+        "title": "Visual Studio Code"
+    },
+    "commands": [
+        [
+            "new function",
+            "'def ():' repeat({left}, 3)"
+        ],
+        [
+            "new method",
+            "'def (self):' repeat({left}, 7)"
+        ],
+        ["for loop", "f'for  in {clipboard.get()}:' repeat({left}, len(clipboard.get()) + 5)"],
+        ["for enumerate", "'for i,  in enumerate(' clipboard.get() '):' repeat({left}, len(clipboard.get()) + 16)"]
+    ],
+    "functions": []
+}

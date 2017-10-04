@@ -16,7 +16,6 @@
         ["react new component", "snippet('vscode\\snippets\\new-react-component.tsx') {left} repeat({ctrl, d}, 2) {back}"]
     ],
     "functions": [
-        ["brackets()", "'{}' {left}{enter}"],
-        ["parentheses()", "'()' {left}"]
+        ["brackets()", "'{}' {left}{enter}"]
     ]
 }

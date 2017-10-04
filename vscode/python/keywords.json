@@ -1,0 +1,20 @@
+{
+    "scope": "vscode",
+    "conditions": {
+        "state": "language == 'python'",
+        "title": "Visual Studio Code"
+    },
+    "rules": [
+        ["pyimport", "import='import' spaceForward()"],
+        ["pytrue", "true='True'"],
+        ["pyfalse", "false='False'"],
+        ["pynone", "none='None'"],
+        ["pyand", "and=spaceAround('and')"],
+        ["pyor", "or=spaceAround('or')"],
+        ["pynot", "not='not' spaceForward()"],
+        ["pycommands", "(<pyimport> | <pytrue> | <pyfalse>| <pynone> | <pyand> | <pyor> | <pynot>)"]
+    ],
+    "commands": [
+        ["python <pycommands>_1-", "$1"]
+    ]
+}

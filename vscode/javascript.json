@@ -4,13 +4,13 @@
         ["jsExport", "export=spaceBack() export spaceForward()"],
         ["jsImport", "import=spaceBack() import spaceForward()"],
         ["jsFrom", "from=spaceBack() from spaceForward()"],
-        ["jsLet", "let=(let spaceForward())"],
-        ["jsConst", "const=(const spaceForward())"],
-        ["jsNew", "new=(new spaceForward())"],
+        ["jsLet", "let=let spaceForward()"],
+        ["jsConst", "const=const spaceForward()"],
+        ["jsNew", "new=new spaceForward()"],
         ["jsThis", "this=this"],
-        ["jsDefault", "default=(spaceBack() default spaceForward())"],
+        ["jsDefault", "default=spaceBack() default spaceForward()"],
         ["jsIf", "if='if' {space} parentheses()"],
-        ["jsElse", "else=(else spaceForward() brackets())"],
+        ["jsElse", "else='else' spaceForward() brackets()"],
         ["jsAnd", "and='&&'"],
         ["jsOr", "or='||'"],
         ["jsBreak", "break='break'"],
@@ -28,7 +28,7 @@
         ["jsKeyword", "(<jsScope> | <jsElse> | <jsForRange>)"]
     ],
     "conditions": {
-        "state": "language == 'python'"
+        "state": "language == 'javascript'"
     },
     "commands": [
         [
@@ -37,7 +37,7 @@
         ],
         [
             "js <jsKeyword>_1-",
-            "result.vars.get(1)"
+            "$1"
         ]
     ]
 }

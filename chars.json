@@ -14,7 +14,7 @@
         ],
         [
             "other_char",
-            "(backslash='\\\\\\\\' | semicolon=';')"
+            "(backslash='\\\\\\\\' | semicolon=';' | colon=':' | slash='/' | lapping='(' | rapping=')' | lace='{' | race='}' | period='.' | lack='[' | rack=']')"
         ],
         [
             "optional_number",
