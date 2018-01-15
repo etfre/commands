@@ -1,5 +1,5 @@
 {
-    "scope": "",
+    "imports": ["sys"],
     "rules": [
         ["key", "(control=ctrl | alt=alt)"]
     ],
@@ -8,7 +8,9 @@
     "commands": [
         ["reload command modules", "osspeak.reload()"],
         ["do that again <optional_number>", "repeat(history.last(), $1)"],
-        ["is <digit>_1- odd or even", "print($1)"],
+        ["a", "3+7"],
+        ["do something", "context.set('a', 1) while(context.get('a') < 5, context.set('a', context.get('a') + 1))"],
+        ["hot tub", "{shift, left}"],
         ["snake case", "transform_selected(text.snake_case)"],
         ["waffle (world|universe)", "wait_for('Code' in window.get_active_window_name()) banana"]
     ],

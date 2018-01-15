@@ -1,5 +1,4 @@
 {
-    "scope": "vscode",
     "rules": [],
     "conditions": {
         "state": "language == 'python'",

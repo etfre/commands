@@ -1,5 +1,4 @@
 {
-    "scope": "vscode",
     "rules": [
         ["jsExport", "export=spaceBack() export spaceForward()"],
         ["jsImport", "import=spaceBack() import spaceForward()"],

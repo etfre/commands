@@ -10,11 +10,11 @@
         ],
         [
             "operator",
-            "(plus='+' | equals='=' | minus='-' | times='*' | percent='%' | caret='^' | greater='>' | lesser='<')"
+            "(plus='+' | equals='=' | minus='-' | asterisk='*' | percent='%' | greater='>' | lesser='<')"
         ],
         [
             "other_char",
-            "(backslash='\\\\\\\\' | semicolon=';' | colon=':' | slash='/' | lapping='(' | rapping=')' | lace='{' | race='}' | period='.' | lack='[' | rack=']')"
+            "(backslash='\\\\\\\\' | semicolon=';' | colon=':' | slash='/' | lapping='(' | rapping=')' | lace='{' | race='}' | period='.' | lack='[' | rack=']' | exclamation='!' | (at sign)='@' | poundsign='#' | dollarsign='$' | ampersand='&' | caret='^' | underscore='_' | dash='-')"
         ],
         [
             "optional_number",
@@ -29,15 +29,10 @@
             "(<letter> | <digit> | <operator> | <other_char>)"
         ]
     ],
-    "scope": "",
     "commands": [
         [
             "<arrow> <optional_number>",
             "repeat({$1}, $2)"
-        ],
-        [
-            "(hello world|goodbye universe)_2-",
-            "foob"
         ],
         [
             "(<letter> | <other_char>) <optional_number>",

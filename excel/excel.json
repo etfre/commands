@@ -1,6 +1,5 @@
 {
 
-    "scope": "excel",
     "rules": [
         ["cell", "(<letter>_1- <digit>_1-)"],
         ["range", "<cell>_1-2"]

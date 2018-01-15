@@ -1,5 +1,4 @@
 {
-    "scope": "vscode",
     "conditions": {
         "state": "language == 'python'",
         "title": "Visual Studio Code"

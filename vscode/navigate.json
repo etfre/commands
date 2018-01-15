@@ -24,6 +24,5 @@
         ["short <operator> <optional_number>", "repeat($1, $2)"],
         ["new arg", "',' spaceForward()"],
         ["<clipboard> <textobject>", "{esc}$2wait(.3)$1 wait(.3)"]
-    ],
-    "scope": "vscode"
+    ]
 }

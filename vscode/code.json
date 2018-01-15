@@ -37,6 +37,5 @@
         ["new line above <optional_number>", "repeat({ctrl, shift, enter}, $1)"],
         ["multi cursor <optional_number>", "repeat({ctrl, d}, $1)"],
         ["waffle house", "{shift, left}"]
-    ],
-    "scope": "vscode"
+    ]
 }

@@ -1,5 +1,4 @@
 {
-    "scope": "chrome",
     "rules": [],
     "conditions": {
         "title": "Google Chrome"

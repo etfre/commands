@@ -30,6 +30,5 @@
         ["go to newsflix", "'cd /mnt/c/Users/evan/modules/newsflix'{enter}venvActivate()"],
         ["rm minus rf", "'rm -rf '"]
         
-    ],
-    "scope": "bash"
+    ]
 }

@@ -1,5 +1,4 @@
 {
-    "scope": "",
     "rules": [
         ["clip", "(cut={ctrl, x} | copy={ctrl, c})"]
     ],

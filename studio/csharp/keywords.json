@@ -1,5 +1,4 @@
 {
-    "scope": "studio",
     "rules": [
         ["csPublic", "public='public '"],
         ["csStatic", "static='static '"],

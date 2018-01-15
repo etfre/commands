@@ -18,6 +18,5 @@
             "text.camel_case($1)"
         ]
 
-    ],
-    "scope": ""
+    ]
 }

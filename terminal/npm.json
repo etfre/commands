@@ -14,6 +14,5 @@
         ["initialize", "'init -y'"],
         ["run web pack", "'npm run wp' {enter}"]
         
-    ],
-    "scope": "bash"
+    ]
 }

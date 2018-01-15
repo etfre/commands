@@ -21,6 +21,5 @@
         ["django make migrations", "'python manage.py makemigrations' {enter}"],
         ["django manage", "'python manage.py '"]
         
-    ],
-    "scope": "bash"
+    ]
 }

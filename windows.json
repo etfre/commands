@@ -55,6 +55,5 @@
         ["start chrome", "proc('start chrome')"],
         ["restart wifi", "async(proc('netsh wlan connect MyWifi123'))"],
         ["switch to bash", "bash keys(enter)"]
-    ],
-    "scope": ""
+    ]
 }

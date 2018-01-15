@@ -35,6 +35,5 @@
         ["new line <optional_number>", "repeat({ctrl+shift+enter}, $1)"],
         ["<operator>", "' ' $1 ' '"],
         ["short <operator> <optional_number>", "repeat($1, $2)"]
-    ],
-    "scope": "studio"
+    ]
 }
