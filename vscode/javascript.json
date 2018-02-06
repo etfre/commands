@@ -27,7 +27,9 @@
         ["jsKeyword", "(<jsScope> | <jsElse> | <jsForRange>)"]
     ],
     "conditions": {
-        "state": "language == 'javascript'"
+        "state": {
+            "language": "javascript"
+        }
     },
     "commands": [
         [

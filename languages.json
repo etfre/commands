@@ -1,7 +1,7 @@
 {
     "rules": [],
     "initialState": {
-        "language": "'python'"
+        "language": "python"
     },
     "commands": [
         [

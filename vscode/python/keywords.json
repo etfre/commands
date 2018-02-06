@@ -1,6 +1,8 @@
 {
     "conditions": {
-        "state": "language == 'python'",
+        "state": {
+            "language": "python"
+        },
         "title": "Visual Studio Code"
     },
     "rules": [

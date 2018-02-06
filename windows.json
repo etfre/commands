@@ -27,9 +27,10 @@
             "bash='evan@EVAN-PC'"
         ],
         ["terminal", "terminal='Terminal of Evan'"],
+        ["cmdprompt", "prompt='command prompt'"],
         [
             "windows",
-            "(<chrome> | <pillars> | <code> | <terminal> | <bash> | <media> | <studio>)"
+            "(<chrome> | <pillars> | <code> | <terminal> | <bash> | <media> | <studio> | <cmdprompt>)"
         ]
     ],
     "conditions": {},
@@ -50,6 +51,7 @@
         ],
         ["start terminal", "keys(ctrl, alt, t)"],
         ["start bash", "proc([path(r'C://Windows/System32/bash.exe')])"],
+        ["start command prompt", "proc([path(r'C://Windows/System32/cmd.exe')])"],
         ["start studio", "start('C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\IDE\\devenv.exe')"],
         ["start code", "proc(code)"],
         ["start chrome", "proc('start chrome')"],

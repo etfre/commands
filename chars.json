@@ -14,7 +14,7 @@
         ],
         [
             "other_char",
-            "(backslash='\\\\\\\\' | semicolon=';' | colon=':' | slash='/' | lapping='(' | rapping=')' | lace='{' | race='}' | period='.' | lack='[' | rack=']' | exclamation='!' | (at sign)='@' | poundsign='#' | dollarsign='$' | ampersand='&' | caret='^' | underscore='_' | dash='-')"
+            "(comma=',' | backslash='\\\\' | single=\"'\" | double='\"' | semicolon=';' | colon=':' | slash='/' | lapping='(' | rapping=')' | lace='{' | race='}' | period='.' | lack='[' | rack=']' | exclamation='!' | (at sign)='@' | poundsign='#' | dollarsign='$' | ampersand='&' | caret='^' | underscore='_' | dash='-')"
         ],
         [
             "optional_number",
@@ -26,7 +26,7 @@
         ],
         [
             "char",
-            "(<letter> | <digit> | <operator> | <other_char>)"
+            "(<letter> | <digit> | <operator> f| <other_char>)"
         ]
     ],
     "commands": [

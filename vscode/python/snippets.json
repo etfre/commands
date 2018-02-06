@@ -1,13 +1,15 @@
 {
     "rules": [],
     "conditions": {
-        "state": "language == 'python'",
+        "state": {
+            "language": "python"
+        },
         "title": "Visual Studio Code"
     },
     "commands": [
         [
             "new function",
-            "'def ():' repeat({left}, 3)"
+            "'def ():' wait(.2) repeat({left}, 3)"
         ],
         [
             "new method",

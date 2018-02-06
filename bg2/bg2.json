@@ -1,0 +1,15 @@
+{
+    "events": {
+        "activate": "if(not state.get('bg2'), run_bg2())",
+        "deactivate": "state.delete('bg2')"
+    },
+    "conditions": {
+        "title": "baldur's gate ii - shadows of amn"
+    },
+    "commands": [
+
+    ],
+    "functions": [
+        ["run_bg2", "state.set('bg2', True) extensions.run('bg2.bg2.bg2.main') thread(while(state.get('bg2'), {'esc'}, print('ps'), wait(10)))"]
+    ]
+}

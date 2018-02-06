@@ -1,0 +1,13 @@
+{
+    "conditions": {
+        "title": "Command Prompt"
+    },
+    "initialState": {
+        "pipenvEnbabled": true
+    },
+    "commands": [
+        ["python install", "'pipenv install '"],
+        ["python run", "'pipenv run '"],
+        ["python main", "'pipenv run python main.py' {enter}"]
+    ]
+}

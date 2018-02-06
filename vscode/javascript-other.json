@@ -2,7 +2,9 @@
     "rules": [
     ],
     "conditions": {
-        "state": "language == 'javascript'",
+        "state": {
+            "language": "javascript"
+        },
         "title": "Visual Studio Code"
     },
     "commands": [

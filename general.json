@@ -6,16 +6,15 @@
     "conditions": {
     },
     "commands": [
-        ["reload command modules", "osspeak.reload()"],
+        ["reload files", "osspeak.reload()"],
         ["do that again <optional_number>", "repeat(history.last(), $1)"],
-        ["a", "3+7"],
+        ["butthole surf", "3+7"],
         ["do something", "context.set('a', 1) while(context.get('a') < 5, context.set('a', context.get('a') + 1))"],
         ["hot tub", "{shift, left}"],
         ["snake case", "transform_selected(text.snake_case)"],
         ["waffle (world|universe)", "wait_for('Code' in window.get_active_window_name()) banana"]
     ],
     "functions": [
-        ["navigateTo(url)", "{ctrl, l}url{enter}"],
         ["transform_selected(transform_func)", "context.set('', clipboard.get()) {ctrl, c} wait(1) clipboard.set(transform_func(clipboard.get())) {ctrl, v} clipboard.set(context.get(''))"]
     ]
 }

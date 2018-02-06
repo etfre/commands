@@ -1,0 +1,11 @@
+{
+    "conditions": {
+        "title": "Command Prompt"
+    },
+    "commands": [
+        ["c d", "'cd '"],
+        ["climb <optional_number>", "repeat('cd..', {enter}, $1)"],
+        ["make directory", "'mkdir '"],
+        ["list files", "dir {enter}"]
+    ]
+}
