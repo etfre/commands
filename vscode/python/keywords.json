@@ -6,13 +6,13 @@
         "title": "Visual Studio Code"
     },
     "rules": [
-        ["pyimport", "import='import' spaceForward()"],
-        ["pytrue", "true='True'"],
-        ["pyfalse", "false='False'"],
-        ["pynone", "none='None'"],
-        ["pyand", "and=spaceAround('and')"],
-        ["pyor", "or=spaceAround('or')"],
-        ["pynot", "not='not' spaceForward()"],
+        ["pyimport", "import='import '"],  
+        ["pytrue", "true='True '"],
+        ["pyfalse", "false='False '"],
+        ["pynone", "none='None '"],
+        ["pyand", "and='and '"],
+        ["pyor", "or='or '"],
+        ["pynot", "not='not '"],
         ["pycommands", "(<pyimport> | <pytrue> | <pyfalse>| <pynone> | <pyand> | <pyor> | <pynot>)"]
     ],
     "commands": [
