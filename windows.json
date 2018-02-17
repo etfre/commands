@@ -44,7 +44,8 @@
             "close window",
             "window.close()"
         ],
-        ["maximize window", "{f11}"],
+        ["minimize window", "window.minimize_active()"],
+        ["maximize window", "window.maximize_active()"],
         [
             "start excel",
             "start('C:\\Program Files (x86)\\Microsoft VS Code\\Code.exe')"
@@ -55,7 +56,7 @@
         ["start studio", "start('C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\IDE\\devenv.exe')"],
         ["start code", "proc(code)"],
         ["start chrome", "proc('start chrome')"],
-        ["restart wifi", "async(proc('netsh wlan connect MyWifi123'))"],
+        ["restart wifi", "thread(proc('netsh wlan connect MyWifi123'))"],
         ["switch to bash", "bash keys(enter)"]
     ]
 }
