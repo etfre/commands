@@ -26,8 +26,9 @@
         ],
         [
             "char",
-            "(<letter> | <digit> | <operator> f| <other_char>)"
+            "(<letter> | <digit> | <operator> | <other_char>)"
         ]
+        
     ],
     "commands": [
         [

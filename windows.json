@@ -50,8 +50,9 @@
             "start excel",
             "start('C:\\Program Files (x86)\\Microsoft VS Code\\Code.exe')"
         ],
-        ["start terminal", "keys(ctrl, alt, t)"],
+        ["start terminal", "keys(ctrl, a - lt, t)"],
         ["start bash", "proc([path(r'C://Windows/System32/bash.exe')])"],
+        ["start prompt", "start(path(r'C://Windows/System32/cmd.exe'))"],
         ["start command prompt", "proc([path(r'C://Windows/System32/cmd.exe')])"],
         ["start studio", "start('C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\IDE\\devenv.exe')"],
         ["start code", "proc(code)"],
