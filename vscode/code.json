@@ -21,6 +21,7 @@
         ["go to definition", "{f12}"],
         ["save", "{ctrl, s}"],
         ["new file", "{ctrl, alt, n}wait(.2){right}"],
+        ["new tab", "{ctrl, n}"],
         ["select line <optional_number>", "repeat({ctrl, i}, $1)"],
         ["line <digit>_1-", "{ctrl, g}$1{enter}"],
         ["undo <digit>_0-", "repeat({ctrl, z}, $1)"],

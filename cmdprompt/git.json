@@ -1,6 +1,6 @@
 {
     "conditions": {
-        "title": "Command Prompt"
+        "title": "cmd"
     },
     "commands": [
         ["git init", "git init {enter}"],

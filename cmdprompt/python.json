@@ -1,9 +1,9 @@
 {
     "conditions": {
-        "title": "Command Prompt"
+        "title": "cmd"
     },
     "initialState": {
-        "pipenvEnbabled": true
+        "pipenvEnabled": true
     },
     "commands": [
         ["python install", "'pipenv install '"],

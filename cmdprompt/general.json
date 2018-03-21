@@ -1,6 +1,6 @@
 {
     "conditions": {
-        "title": "Command Prompt"
+        "title": "cmd"
     },
     "commands": [
         ["c d", "'cd '"],
