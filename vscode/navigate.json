@@ -10,19 +10,19 @@
         ["spaceAround(char)", "spaceBack() char spaceForward()"]
     ],
     "rules": [
-        ["clipboard", "(cut={ctrl, x} | copy={ctrl, c} | select='')"],
+        ["text_action", "(cut={ctrl, x} | copy={ctrl, c} | select='')"],
         ["motion", "(until=t | after=f | before=F | retreat=T)"],
-        ["flydirection", "(north=w | west=a | south=s | east=d | first=f | final=l | genesis=z | apocalypse=e)"],
-        ["textobject", "(word={ctrl, d} | file={ctrl, a})"]
+        ["text_direction", "(left | right | down | up | final=end | first=home)"],
+        ["textobject", "(word={ctrl, d} | file={ctrl, a} line={ctrl, i})"]
     ],
     "commands": [
-        ["<motion> <char> <optional_number>", "flystart() $-1 'f' $1$-2 'c' flyend()"],
-        ["<clipboard> <motion> <char> <optional_number>", "flystart() $-1 'f' $2$-2 's' flyend() wait(.2) $1"],
-        ["<flydirection> <optional_number>", "flystart() $2 'd' $1 'c' flyend()"],
-        ["<clipboard> <flydirection> <optional_number>", "flystart() $3 'd' $2 's' flyend() wait(.2) $1"],
-        ["<operator>", "spaceAround($1)"],
+        ["jump <char>", "{ctrl, shift, j} wait(.5) $1"],
+        ["select <char>", "{ctrl, shift, i} wait(.5) $1"],
+        ["<text_action> <text_direction> <optional_number>", "repeat({shift, $2}, $3) wait(.2) $1 if(context.words[0] == 'copy', {esc})"],
+        ["<text_direction> <optional_number>", "repeat({$1}, $2)"],
+        ["<operator>", "' ' $1 ' '"],
         ["short <operator> <optional_number>", "repeat($1, $2)"],
-        ["new arg", "',' spaceForward()"],
-        ["<clipboard> <textobject>", "{esc}$2wait(.3)$1 wait(.3) if(context.words[0] == 'copy', {esc})"]
+        ["new arg", "', '"],
+        ["<text_action> <textobject>", "{esc}$2wait(.3)$1 wait(.3) if(context.words[0] == 'copy', {esc})"]
     ]
 }

@@ -27,7 +27,7 @@
             "bash='evan@EVAN-PC'"
         ],
         ["terminal", "terminal='Terminal of Evan'"],
-        ["cmdprompt", "prompt='command prompt'"],
+        ["cmdprompt", "prompt='cmd'"],
         [
             "windows",
             "(<chrome> | <pillars> | <code> | <terminal> | <bash> | <media> | <studio> | <cmdprompt>)"
@@ -52,8 +52,8 @@
         ],
         ["start terminal", "keys(ctrl, a - lt, t)"],
         ["start bash", "proc([path(r'C://Windows/System32/bash.exe')])"],
-        ["start prompt", "start(path(r'C://Windows/System32/cmd.exe'))"],
-        ["start command prompt", "proc([path(r'C://Windows/System32/cmd.exe')])"],
+        ["start prompt", "start(path(r'C://Program Files/ConEmu/ConEmu64.exe'))"],
+        ["start command prompt", "proc([path(r'C:/Program Files/ConEmu/ConEmu64.exe')])"],
         ["start studio", "start('C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\IDE\\devenv.exe')"],
         ["start code", "proc(code)"],
         ["start chrome", "proc('start chrome')"],
