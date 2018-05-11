@@ -6,6 +6,7 @@
         ["c d", "'cd '"],
         ["climb <optional_number>", "repeat('cd..', {enter}, $1)"],
         ["make directory", "'mkdir '"],
+        ["debug os speak", "'pipenv run python main.py --perform_actions 0 --interface gui' {enter}"],
         ["list files", "dir {enter}"]
     ]
 }

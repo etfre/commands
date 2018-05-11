@@ -7,8 +7,16 @@
             "chrome='Google Chrome'"
         ],
         [
+            "firefox",
+            "firefox='Mozilla Firefox'"
+        ],
+        [
             "pillars",
             "pillars='Pillars of Eternity'"
+        ],
+        [
+            "osspeak",
+            "osspeak='osspeak ide'"
         ],
         [
             "studio",
@@ -26,16 +34,23 @@
             "bash",
             "bash='evan@EVAN-PC'"
         ],
+        [
+            "deadfire",
+            "deadfire='pillars of eternity ii'"
+        ],
+        [
+            "kindle",
+            "kindle='kindle for pc'"
+        ],
         ["terminal", "terminal='Terminal of Evan'"],
         ["cmdprompt", "prompt='cmd'"],
         [
             "windows",
-            "(<chrome> | <pillars> | <code> | <terminal> | <bash> | <media> | <studio> | <cmdprompt>)"
+            "(<deadfire> | <kindle> | <osspeak> | <firefox> | <chrome> | <pillars> | <code> | <terminal> | <bash> | <media> | <studio> | <cmdprompt>)"
         ]
     ],
     "conditions": {},
     "commands": [
-        ["banana hammock", "repeat({ctrl, a}, {esc}, 10)"],
         [
             "open <windows> <optional_number>",
             "window.focus($1, $2)"
@@ -56,8 +71,9 @@
         ["start command prompt", "proc([path(r'C:/Program Files/ConEmu/ConEmu64.exe')])"],
         ["start studio", "start('C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\IDE\\devenv.exe')"],
         ["start code", "proc(code)"],
-        ["start chrome", "proc('start chrome')"],
         ["restart wifi", "thread(proc('netsh wlan connect MyWifi123'))"],
+        ["start firefox", "proc('start firefox')"],
+        ["start chrome", "proc('start chrome')"],
         ["switch to bash", "bash keys(enter)"]
     ]
 }
