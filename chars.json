@@ -37,7 +37,7 @@
         ],
         [
             "(<letter> | <other_char>) <optional_number>",
-            "repeat($1, $-1)"
+            "repeat({$1}, $-1)"
         ],
         [
             "grow <letter> <optional_number>",
