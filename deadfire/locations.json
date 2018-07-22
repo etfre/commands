@@ -1,8 +1,13 @@
 {
     "rules": [
+        ["edgeNorth", "north=[600, 0]"],
+        ["edgeEast", "east=[2000, 600]"],
+        ["edgeSouth", "south=[600, 2000]"],
+        ["edgeWest", "west=[0, 600]"],
+        ["edges", "(<edgeNorth> | <edgeEast> | <edgeSouth> | <edgeWest>)"]
     ],
     "conditions": {
-        "title": "pillars of eternity"
+        "title": "pillars of eternity ii"
     },
     "commands": [
     ],

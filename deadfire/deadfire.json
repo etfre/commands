@@ -1,14 +1,15 @@
 {
     "events": {
-        "activate": "state.set('grid', screengrid.Grid()) "
+        "activate": "state.set('grid', screengrid.Grid())"
     },
     "rules": [],
     "conditions": {
         "title": "pillars of eternity ii"
     },
     "commands": [
-        ["grid", "state.get('grid').draw_letter_grid()"], 
-        ["white text", "setattr(state.get('grid'), 'font_color', (255,255,255))"], 
+        ["grid", "state.get('grid').draw_letter_grid()"],
+        ["move", "state.get('grid').draw_letter_grid(click=True)"],
+        ["gray text", "setattr(state.get('grid'), 'font_color', (128,128,128))"], 
         ["center mouse", "mouseMove(centerPos())"],
         ["double click", "doubleClick()"],
         ["zoom out", "'-'"],
@@ -26,11 +27,12 @@
         ["south <digit>_1-", "mouseTo(0, $1)"],
         ["southwest <digit>_1-", "mouseTo(-int($1), $1)"],
         ["west <digit>_1-", "mouseTo(-int($1), 0)"],
-        ["northwest <digit>_1-", "mouseTo(-int($1), -int($1))"]
+        ["northwest <digit>_1-", "mouseTo(-int($1), -int($1))"],
+        ["pan <edges>", "mouseMove($1)"]
     ],
     "functions": [
         ["mouseMove(pos)", "mouse.move(pos[0], pos[1])"],
-        ["mouseTo(x, y)", "mouse.move(int(x) * 40, int(y) * 40, False)"],
+        ["mouseTo(x, y)", "mouse.move(int(x) * 5, int(y) * 5, False)"],
         ["focusCharacter(pos)", "mouseMove(pos) wait(.3) doubleClick() wait(.3) mouseMove(centerPos())"],
         ["doubleClick()", "mouse.click() wait(.05) mouse.click()"]    ]
 }
