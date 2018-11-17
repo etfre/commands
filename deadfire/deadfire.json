@@ -7,8 +7,8 @@
         "title": "pillars of eternity ii"
     },
     "commands": [
-        ["grid", "state.get('grid').draw_letter_grid()"],
-        ["move", "state.get('grid').draw_letter_grid(click=True)"],
+        ["grid", "state.get('grid').overlay()"],
+        ["move", "state.get('grid').overlay(click=True)"],
         ["gray text", "setattr(state.get('grid'), 'font_color', (128,128,128))"], 
         ["center mouse", "mouseMove(centerPos())"],
         ["double click", "doubleClick()"],

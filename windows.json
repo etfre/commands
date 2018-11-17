@@ -39,6 +39,10 @@
             "deadfire='pillars of eternity ii'"
         ],
         [
+            "civilization",
+            "civilization='civ iv'"
+        ],
+        [
             "kindle",
             "kindle='kindle for pc'"
         ],
@@ -46,7 +50,7 @@
         ["cmdprompt", "prompt='cmd'"],
         [
             "windows",
-            "(<deadfire> | <kindle> | <osspeak> | <firefox> | <chrome> | <pillars> | <code> | <terminal> | <bash> | <media> | <studio> | <cmdprompt>)"
+            "(<civilization> | <deadfire> | <kindle> | <osspeak> | <firefox> | <chrome> | <pillars> | <code> | <terminal> | <bash> | <media> | <studio> | <cmdprompt>)"
         ]
     ],
     "conditions": {},
@@ -70,6 +74,7 @@
         ["start prompt", "start(path(r'C://Program Files/ConEmu/ConEmu64.exe'))"],
         ["start command prompt", "proc([path(r'C:/Program Files/ConEmu/ConEmu64.exe')])"],
         ["start studio", "start('C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\IDE\\devenv.exe')"],
+        ["start civilization four", "start('C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\IDE\\devenv.exe')"],
         ["start code", "proc(code)"],
         ["restart wifi", "thread(proc('netsh wlan connect MyWifi123'))"],
         ["start firefox", "proc('start firefox')"],

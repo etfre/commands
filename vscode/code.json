@@ -10,7 +10,7 @@
         ],
         [
             "snippet(path)",
-            "state.set(temp, clipboard.get()) wait(.2) clipboard.set(file.read(path)) wait(.2) {ctrl, v} wait(.2) clipboard.set(state.get(temp))"
+            "state.set(temp, clipboard.get()) wait(.2) clipboard.set(fsystem.read_file(path)) wait(.2) {ctrl, v} wait(.2) clipboard.set(state.get(temp))"
         ]
     ],
     "rules": [
