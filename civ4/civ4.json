@@ -7,86 +7,30 @@
         "title": "Civ IV"
     },
     "commands": [
-        [
-            "grid",
-            "state.get('grid').overlay()"
-        ],
-        [
-            "move",
-            "state.get('grid').overlay(click=True)"
-        ],
-        [
-            "gray text",
-            "setattr(state.get('grid'), 'font_color', (128,128,128))"
-        ],
-        [
-            "center mouse",
-            "mouseMove(centerPos())"
-        ],
-        [
-            "double click",
-            "doubleClick()"
-        ],
-        [
-            "zoom out",
-            "'-'"
-        ],
-        [
-            "zoom in",
-            "'='"
-        ],
-        [
-            "stealth mode",
-            "directinput.send(alt)"
-        ],
-        [
-            "number <digit>_1-",
-            "directinput.send($1)"
-        ],
-        [
-            "pause",
-            "{space}"
-        ],
-        [
-            "quick save",
-            "{f5}"
-        ],
-        [
-            "north <digit>_0-",
-            "repeat(moveUnit(NumKey8), $1)"
-        ],
-        [
-            "northeast <digit>_0-",
-            "repeat(moveUnit(NumKey9), $1)"
-        ],
-        [
-            "east <digit>_0-",
-            "repeat(moveUnit(NumKey6), $1)"
-        ],
-        [
-            "southeast <digit>_0-",
-            "repeat(moveUnit(NumKey3), $1)"
-        ],
-        [
-            "south <digit>_0-",
-            "repeat(moveUnit(NumKey2), $1)"
-        ],
-        [
-            "southwest <digit>_0-",
-            "repeat(moveUnit(NumKey1), $1)"
-        ],
-        [
-            "west <digit>_0-",
-            "repeat(moveUnit(NumKey4), $1)"
-        ],
-        [
-            "northwest <digit>_0-",
-            "repeat(moveUnit(NumKey7), $1)"
-        ],
-        [
-            "pan <edges>",
-            "mouseMove($1)"
-        ]
+        [ "grid", "state.get('grid').overlay()" ],
+        [ "move", "state.get('grid').overlay(click=True)" ],
+        [ "gray text", "setattr(state.get('grid'), 'font_color', (128,128,128))" ],
+        [ "center mouse", "mouseMove(centerPos())" ],
+        [ "double click", "doubleClick()" ],
+        ["domestic advisor", "{f1}"],
+        ["financial advisor", "{f2}"],
+        ["change civics", "{f3}"],
+        ["foreign advisor", "{f4}"],
+        ["military advisor", "{f5}"],
+        ["technology advisor | tech tree", "{f6}"],
+        ["convert religion", "{f7}"],
+        [ "number <digit>_1-", "directinput.send($1)" ],
+        [ "north <digit>_0-", "repeat(moveUnit(NumKey8), $1)" ],
+        [ "northeast <digit>_0-", "repeat(moveUnit(NumKey9), $1)" ],
+        [ "east <digit>_0-", "repeat(moveUnit(NumKey6), $1)" ],
+        [ "southeast <digit>_0-", "repeat(moveUnit(NumKey3), $1)" ],
+        [ "south <digit>_0-", "repeat(moveUnit(NumKey2), $1)" ],
+        [ "southwest <digit>_0-", "repeat(moveUnit(NumKey1), $1)" ],
+        [ "west <digit>_0-", "repeat(moveUnit(NumKey4), $1)" ],
+        [ "northwest <digit>_0-", "repeat(moveUnit(NumKey7), $1)" ],
+        [ "pan <edges>", "mouseMove($1)" ],
+        [ "zoom in", "{pageup}" ],
+        [ "zoom out", "{pagedown}" ]
     ],
     "functions": [
         [

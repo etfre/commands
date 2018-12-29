@@ -7,8 +7,6 @@
         ["location", "print(mouse.x(), mouse.y())"],
         ["center mouse", "mouseMove(centerPos())"],
         ["double click", "doubleClick()"],
-        ["zoom out", "'-'"],
-        ["zoom in", "'='"],
         ["stealth mode", "{alt}"],
         ["focus 1", "focusCharacter(char1())"],
         ["focus 2", "focusCharacter(char2())"],

@@ -12,8 +12,6 @@
         ["gray text", "setattr(state.get('grid'), 'font_color', (128,128,128))"], 
         ["center mouse", "mouseMove(centerPos())"],
         ["double click", "doubleClick()"],
-        ["zoom out", "'-'"],
-        ["zoom in", "'='"],
         ["stealth mode", "directinput.send(alt)"],
         ["<digit>", "directinput.send($1)"],
         ["select all", "{back}"],
