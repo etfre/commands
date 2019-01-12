@@ -1,14 +1,4 @@
 {
-    "imports": [
-        "sys"
-    ],
-    "rules": [
-        [
-            "key",
-            "(control=ctrl | alt=alt | shift=shift)"
-        ]
-    ],
-    "conditions": {},
     "commands": [
         [
             "reload files",
@@ -18,13 +8,29 @@
             "do that again <optional_number>",
             "repeat(history.last(), $1)"
         ],
-        ["print screen", "{prtsc}"],
-        ["search project", "{ctrl, shift, f}"]
+        [
+            "print screen",
+            "{prtsc}"
+        ],
+        [
+            "search project",
+            "{ctrl, shift, f}"
+        ]
     ],
+    "conditions": {},
     "functions": [
         [
             "transform_selected(transform_func)",
             "context.set('', clipboard.get()) {ctrl, c} wait(1) clipboard.set(transform_func(clipboard.get())) {ctrl, v} clipboard.set(context.get(''))"
+        ]
+    ],
+    "imports": [
+        "sys"
+    ],
+    "rules": [
+        [
+            "key",
+            "(control=ctrl | alt=alt | shift=shift)"
         ]
     ]
 }

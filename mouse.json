@@ -1,8 +1,4 @@
 {
-    "functions": [
-    ],
-    "rules": [],
-    "conditions": {},
     "commands": [
         [
             "click",
@@ -20,5 +16,8 @@
             "mouse y",
             "mouse.y()"
         ]
-    ]
+    ],
+    "conditions": {},
+    "functions": [],
+    "rules": []
 }
