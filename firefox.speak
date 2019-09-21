@@ -1,0 +1,5 @@
+is_active() => 'Mozilla Firefox'
+
+website := (hacker news)='news.ycombinator.com' | (google news)='news.google.com'
+
+go to <website> = {ctrl l} wait(.5) 'http://' $1 wait(.05) {enter}

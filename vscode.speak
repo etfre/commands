@@ -1,0 +1,5 @@
+is_active() => 'Visual Studio Code'
+
+website := (hacker news)='news.ycombinator.com' | (google news)='news.google.com'
+
+select word = {ctrl d}

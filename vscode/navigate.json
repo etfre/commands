@@ -16,13 +16,6 @@
         ["textobject", "(word={ctrl, d} | file={ctrl, a} line={ctrl, i})"]
     ],
     "commands": [
-        ["jump <char>", "{ctrl, shift, j} wait(.5) $1"],
-        ["select <char>", "{ctrl, shift, i} wait(.5) $1"],
-        ["<text_action> <text_direction> <optional_number>", "repeat({shift, $2}, $3) wait(.2) $1 if(context.words[0] == 'copy', {esc})"],
-        ["<text_direction> <optional_number>", "repeat({$1}, $2)"],
-        ["<operator>", "' ' $1 ' '"],
-        ["short <operator> <optional_number>", "repeat($1, $2)"],
-        ["new arg", "', '"],
-        ["<text_action> <textobject>", "{esc}$2wait(.3)$1 wait(.3) if(context.words[0] == 'copy', {esc})"]
-    ]
+        ["jump", "{shift, enter}"]
+        ]
 }

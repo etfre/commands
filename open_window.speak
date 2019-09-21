@@ -1,0 +1,4 @@
+open <window> = window.focus($1)
+window := (firefox=firefox | chrome=chrome)
+factorial <digit>+ = fac(int($1))
+fac(n) => if(lt($n, 2), $n, mul($n, fac(sub($n, 1))))
