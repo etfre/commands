@@ -2,8 +2,8 @@ char := (alpha=a | bravo=b | charlie=c | delta=d | eureka=e | foxtrot=f | golf=g
 digit := (0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)
 modifier := control='ctrl ' | alt='alt ' | shift='shift '
 number := <digit>+
-key := (delete=del | back=back)
+key := (delete=del | back=back | enter)
 
-<char> [<number>] = loop($1, $2)
-<key> = {$1}
+<char> [<number>] = if(re.search('Civ iv:', active_window()), $1, directinput.send($1))~$2
+<key> [<number>] = loop({$1}, $2)
 <modifier>_1-3 (_<char> | _<key>)+ = {$1 $2}

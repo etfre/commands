@@ -1,0 +1,39 @@
+on_activate() => setState(grid, screengrid.Grid())
+is_active() => ''
+mouseMove(pos) => mouse.move($pos[0], $pos[1])
+moveUnit(key) => {$key} wait(.3)
+mouseTo(x, y) => mouse.move(int($x) * 5, int($y) * 5, false())  
+doubleClick() => mouse.click() wait(.05) mouse.click()
+
+edgeNorth := north=[600, 0]
+edgeEast := east=[2000, 600]
+edgeSouth := south=[600, 2000]
+edgeWest := west=[0, 600]
+edges := <edgeNorth> | <edgeEast> | <edgeSouth> | <edgeWest>
+
+grid = state.grid.overlay() 
+move = state.grid.overlay(click=True) 
+gray text = setattr(state.grid 'font_color', [128,128,128]) 
+center mouse = mouseMove(centerPos()) 
+double click = doubleClick() 
+domestic advisor = {f1}
+financial advisor = {f2}
+change civics = {f3}
+foreign advisor = {f4}
+military advisor = {f5}
+technology advisor | tech tree = {f6}
+convert religion = {f7}
+number <digit>_1- = directinput.send($1) 
+north <digit>_0- = loop(moveUnit(NumKey8), $1) 
+northeast <digit>_0- = loop(moveUnit(NumKey9), $1) 
+east <digit>_0- = loop(moveUnit(NumKey6), $1) 
+southeast <digit>_0- = loop(moveUnit(NumKey3), $1) 
+south <digit>_0- = loop(moveUnit(NumKey2), $1) 
+southwest <digit>_0- = loop(moveUnit(NumKey1), $1) 
+west <digit>_0- = loop(moveUnit(NumKey4), $1) 
+northwest <digit>_0- = loop(moveUnit(NumKey7), $1) 
+pan <edges> = mouseMove($1) 
+zoom in = {pageup} 
+zoom out = {pagedown}
+banana = directinput.send(w)
+apple = if(re.search(Command, active_window()), yes, no)

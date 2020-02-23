@@ -1,0 +1,11 @@
+on_activate() => setState(grid, screengrid.Grid())
+
+do something = state.grid.overlay(click=true())
+
+#["grid", "state.get('grid').overlay()"],
+#["move", "state.get('grid').overlay(click=True)"],
+#["gray text", "setattr(state.get('grid'), 'font_color', (128,128,128))"], 
+
+grid = state.grid.overlay()
+move = state.grid.overlay(click=True)
+gray text = setattr(state.grid, 'font_color', [128,128,128])

@@ -1,5 +1,7 @@
 is_active() => 'Visual Studio Code'
 
-website := (hacker news)='news.ycombinator.com' | (google news)='news.google.com'
+keySequence := undo='ctrl z'
+
+<keySequence> = {$1}
 
 select word = {ctrl d}
