@@ -1,2 +1,2 @@
 window := firefox=firefox | chrome=chrome | code=visual studio code
-open <window> = window.focus($1)
+open <window> [<digit>] = window.focus($1, $2)

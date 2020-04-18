@@ -1,8 +1,10 @@
+priority: 3 + 2
+
 on_activate() => setState(grid, screengrid.Grid())
-is_active() => ''
+is_active() => 'beyond the sword'
 mouseMove(pos) => mouse.move($pos[0], $pos[1])
 moveUnit(key) => {$key} wait(.3)
-mouseTo(x, y) => mouse.move(int($x) * 5, int($y) * 5, false())  
+mouseRelative(x, y) => mouse.move(int($x) * 5, int($y) * 5, false())  
 doubleClick() => mouse.click() wait(.05) mouse.click()
 
 edgeNorth := north=[600, 0]
@@ -11,6 +13,7 @@ edgeSouth := south=[600, 2000]
 edgeWest := west=[0, 600]
 edges := <edgeNorth> | <edgeEast> | <edgeSouth> | <edgeWest>
 
+mouse left = mouseRelative(-20, 0)
 grid = state.grid.overlay() 
 move = state.grid.overlay(click=True) 
 gray text = setattr(state.grid 'font_color', [128,128,128]) 

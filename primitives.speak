@@ -1,9 +1,10 @@
-char := (alpha=a | bravo=b | charlie=c | delta=d | eureka=e | foxtrot=f | golf=g | hotel=h | india=i | juliet=j | kilo=k | lima=l | michael=m | november=n | oscar=o | peter=p | quiet=q | romeo=r | sierra=s | tango=t | uniform=u | victor=v | whiskey=w | xray=x | yankee=y | zulu=z)
+letter := (alpha=a | bravo=b | charlie=c | delta=d | eureka=e | foxtrot=f | golf=g | hotel=h | india=i | juliet=j | kilo=k | lima=l | michael=m | november=n | oscar=o | peter=p | quiet=q | romeo=r | sierra=s | tango=t | uniform=u | victor=v | whiskey=w | xray=x | yankee=y | zulu=z)
 digit := (0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)
 modifier := control='ctrl ' | alt='alt ' | shift='shift '
 number := <digit>+
-key := (delete=del | back=back | enter)
+direction := north=up | south=down | east=right | west=left
+key := (delete=del | back=back | enter | _<direction> | tab | home)
 
-<char> [<number>] = if(re.search('Civ iv:', active_window()), $1, directinput.send($1))~$2
+<letter> [<number>] = if(re.search('Civ iv:', active_window()), $1, directinput.send($1))~$2
 <key> [<number>] = loop({$1}, $2)
-<modifier>_1-3 (_<char> | _<key>)+ = {$1 $2}
+<modifier>_1-3 (_<letter> | _<key>)+ = {$1 $2}

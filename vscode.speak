@@ -1,7 +1,5 @@
 is_active() => 'Visual Studio Code'
 
-keySequence := undo='ctrl z'
+keySequence := undo='ctrl z' | (select word)='ctrl d'
 
-<keySequence> = {$1}
-
-select word = {ctrl d}
+<keySequence> [<number>] = {$1}~$2
