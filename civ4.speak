@@ -1,5 +1,5 @@
-priority: 3 + 2
-is_active() => 'beyond the sword'
+priority: 2
+is_active() => 'civ iv: beyond the sword'
 on_activate() => setState(grid, screengrid.Grid()) keyboard.add_delay(/numkey\d/, 1) print('civ 4 activate')
 on_deactivate() => keyboard.remove_delay(/numkey\d/) print('civ 4 deactivate')
 mouseMove(pos) => mouse.move($pos[0], $pos[1])
@@ -13,7 +13,10 @@ edgeSouth := south=[600, 2000]
 edgeWest := west=[0, 600]
 edges := <edgeNorth> | <edgeEast> | <edgeSouth> | <edgeWest>
 
-mouse left = mouseRelative(-20, 0)
+mouse right <digit>_0- = mouseRelative(if($1 == none(), 1, int($1)), 0)
+mouse down <digit>_0- = mouseRelative(0, if($1 == none(), 1, int($1)))
+mouse left <digit>_0- = mouseRelative(if($1 == none(), -1, -int($1)), 0)
+mouse up <digit>_0- = mouseRelative(0, if($1 == none(), -1, -int($1)))
 grid = state.grid.overlay() 
 move = state.grid.overlay(click=True) 
 gray text = setattr(state.grid 'font_color', [128,128,128]) 
@@ -38,5 +41,8 @@ northwest <digit>_0- = moveUnit(NumKey7, $1)
 pan <edges> = mouseMove($1) 
 zoom in = {pageup} 
 zoom out = {pagedown}
-banana = directinput.send(w)
-apple = if(re.search(Command, active_window()), yes, no)
+go to = mouse.move(300, 300) g state.grid.overlay(click=True)
+route to = mouse.move(300, 300) {alt r}  state.grid.overlay(click=True)
+
+sleep | fortify = f
+skip turn = {space}
