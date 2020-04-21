@@ -6,5 +6,9 @@ direction := north=up | south=down | east=right | west=left
 key := (delete=del | back=back | enter | _<direction> | tab | home)
 
 <letter> [<number>] = if(re.search('Civ iv:', active_window()), $1, directinput.send($1))~$2
-<key> [<number>] = loop({$1}, $2)
-<modifier>_1-3 (_<letter> | _<key>)+ = {$1 $2}
+<key> [<number>] = {$1}~$2
+<modifier>_1-3 (_<letter> | _<key>) [<number>] = {$1 $2}~$3
+hold <modifier>_1-3 (_<letter> | _<key>) [<number>] = {$1 $2 + '_hold'}~$3
+release <modifier>_1-3 (_<letter> | _<key>) [<number>] = {$1 $2 + '_release'}~$3
+wait <number> = wait($1)
+test this = {'shift up left_2'}

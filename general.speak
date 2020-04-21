@@ -3,4 +3,6 @@ goodbye universe = true() && false() || true() && false() && true()
 compare = 1 < 3 <= 5
 exponent = 2 ** 3 ** 2
 add = 1 + 2 - 3
+between = between(hyello, ' ' wait(1), 4) world
 snippet(path) => read("snippets\\" + $path)
+select program = {alt tab_hold}~4
