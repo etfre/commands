@@ -1,0 +1,4 @@
+is_active() => 'evan@desktop'
+list = ls {enter}
+list all = 'ls -a' {enter}
+climb [<number>] = 'cd ..' + '/..' * (int($1 || 1) - 1) {enter}

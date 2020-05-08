@@ -1,0 +1,19 @@
+pyKeyword := continue | break | pass | true=True | false=False | none=None
+pyKeywordAfter := yield | return | import | with | not
+pyKeywordBetween := in | is | and | or
+builtin_functions := print | length=len | any | all | open | zip | string=str | type | super | set | range | representation=repr | (is instance) = isinstance | id | min | max | input | float | integer=int
+
+new function [<_dictation>] = 'def ():' {left}~3 snake_case($1)
+new class [<_dictation>] = 'class :' {left} snake_case($1)
+if statement = 'if :' {left}
+for statement = 'for i in :' {left}
+while statement = 'while :' {left}
+read file = 'with open() as f:' {left}~7
+write file = 'with open(, "w") as f:' {left}~12
+<pyKeyword> = $1
+<pyKeywordAfter> = $1 ' '
+key <pyKeywordBetween> = ' ' $1 ' '
+short key <pyKeywordBetween> = ' ' $1 ' '
+function <builtin_functions> = $1 '()' {left}
+slice = '[::]' 
+new string = "''" {left}

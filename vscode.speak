@@ -1,5 +1,18 @@
 is_active() => 'Visual Studio Code'
 
-keySequence := undo='ctrl z' | (select word)='ctrl d'
+keySequence := undo={ctrl z} | redo={ctrl y} | (select word)={ctrl d} | (new line) = {ctrl enter} | (new line above) = {ctrl shift enter} | indent = {'ctrl ]'} | outdent = {'ctrl ['}
+movement := before = 'ctrl left' | after = 'ctrl right' | <direction>
+action := copy = 'ctrl c' | cut = 'ctrl x' | select = ''
+operator := plus='+' | minus='-' | divide='/' | multiply='*' | percentage='%' | exponent='**' | equals='=' | compare='=='
 
-<keySequence> [<number>] = {$1}~$2
+<action> that [<number>] = {$1}~$2
+<keySequence> [<number>] = $1~$2
+[<action>] <movement> [<number>] = {if($1 != none(), 'shift ', '') + $2}~$3
+first = {home}
+final = {end}
+<operator> = ' ' + $1 + ' '
+short <operator> = $1
+pens = '()'
+braces = '{}'
+blocks = '[]'
+line <number> = {ctrl g} $1 {enter}
