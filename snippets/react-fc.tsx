@@ -1,1 +1,5 @@
-dollar
+class Foo {
+    constructor(parameters) {
+        
+    }
+}

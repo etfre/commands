@@ -1,2 +1,0 @@
-window := firefox=mozilla firefox | chrome=chrome | code=visual studio code | civ=beyond the sword
-open <window> [<digit>] = window.focus($1, $2)

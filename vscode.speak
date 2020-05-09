@@ -1,7 +1,7 @@
 is_active() => 'Visual Studio Code'
 
 keySequence := undo={ctrl z} | redo={ctrl y} | (select word)={ctrl d} | (new line) = {ctrl enter} | (new line above) = {ctrl shift enter} | indent = {'ctrl ]'} | outdent = {'ctrl ['}
-movement := before = 'ctrl left' | after = 'ctrl right' | <direction>
+movement := before = 'ctrl left' | after = 'ctrl right' | <direction> | expand = 'shift alt right' | contract = 'shift alt left'
 action := copy = 'ctrl c' | cut = 'ctrl x' | select = ''
 operator := plus='+' | minus='-' | divide='/' | multiply='*' | percentage='%' | exponent='**' | equals='=' | compare='=='
 
@@ -16,3 +16,4 @@ pens = '()'
 braces = '{}'
 blocks = '[]'
 line <number> = {ctrl g} $1 {enter}
+select line [<number>] = {ctrl l}~$1

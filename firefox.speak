@@ -1,5 +1,22 @@
-is_active() => 'Mozilla Firefox'
+is_active() => "Mozilla Firefox"
+navigateTo(url) => {ctrl l} wait(.2) $url wait(.2) {enter}
 
-website := (hacker news)='news.ycombinator.com' | (google news)='news.google.com'
-
-go to <website> = {ctrl l} wait(.5) 'http://' $1 wait(.05) {enter}
+new tab = {ctrl t}
+tab left [<number>] = {ctrl pageup}~$1
+tab right [<number>] = {ctrl pagedown}~$1
+close tab [<number>] = {ctrl w}~$1
+go back = {alt left}
+go forward = {alt right}
+refresh = {f5}
+toggle devtools = {f12}
+page top = {home}
+page bottom = {end}
+navigate = {ctrl l}
+search page = {ctrl f}
+south [<number>] = {pagedown}~$1
+north [<number>] = {pageup}~$1
+go to hacker news = navigateTo('http://news.ycombinator.com')
+go to google news = navigateTo('http://news.google.com')
+go to reddit = navigateTo('http://reddit.com')
+go to something awful = navigateTo('http://forums.somethingawful.com')
+go to local dev = navigateTo('http://localhost:8000')

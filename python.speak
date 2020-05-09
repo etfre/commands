@@ -1,3 +1,5 @@
+is_active() => 'Visual Studio Code'
+
 pyKeyword := continue | break | pass | true=True | false=False | none=None
 pyKeywordAfter := yield | return | import | with | not
 pyKeywordBetween := in | is | and | or
