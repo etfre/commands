@@ -4,6 +4,8 @@ modifier := control='ctrl ' | alt='alt ' | shift='shift '
 number := <digit>+
 direction := north=up | south=down | east=right | west=left
 key := (escape=esc | space | delete=del | back=back | enter | <direction> | tab | home | downscore='_' | colon=':' | semicolon=';' | comma=',' | pipe='|' | slash='/' | backslash='\\' | period='.' | single="'" | double='"' | (open pen)='(' | (close pen)=')' | (open brace)='{' | (close brace)='}' | (open block)='[' | (close block)=']')
+mouseRelative(x, y) => mouse.move(int($x) * 5, int($y) * 5, false())  
+
 
 <letter> [<number>] = if(re.search('Civ iv:', active_window()), $1, directinput.send($1))~$2
 <key> [<number>] = {$1}~$2
@@ -12,3 +14,10 @@ hold <modifier>_1-3 (<letter> | <key>) [<number>] = {$1 $2 + '_hold'}~$3
 release <modifier>_1-3 (<letter> | <key>) [<number>] = {$1 $2 + '_release'}~$3
 number <number> = $1
 wait <number> = wait($1)
+click = click()
+right click = mouse.right_click()
+double click = mouse.double_click()
+mouse right [<number>] = mouseRelative(if($1 == none(), 1, int($1)), 0)
+mouse down <digit>_0- = mouseRelative(0, if($1 == none(), 1, int($1)))
+mouse left <digit>_0- = mouseRelative(if($1 == none(), -1, -int($1)), 0)
+mouse up <digit>_0- = mouseRelative(0, if($1 == none(), -1, -int($1)))

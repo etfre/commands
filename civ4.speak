@@ -4,7 +4,6 @@ on_activate() => setState(grid, screengrid.Grid()) keyboard.add_delay(/numkey\d/
 on_deactivate() => keyboard.remove_delay(/numkey\d/) print('civ 4 deactivate')
 mouseMove(pos) => mouse.move($pos[0], $pos[1])
 moveUnit(key, count) => {$key}~$count
-mouseRelative(x, y) => mouse.move(int($x) * 5, int($y) * 5, false())  
 doubleClick() => mouse.click() wait(.05) mouse.click()
 centerPos() => [300, 300]
 
@@ -19,15 +18,10 @@ edges := <edgeNorth> | <edgeEast> | <edgeSouth> | <edgeWest>
 record macro <letter> = macro.record($1)
 stop recording [<letter>] = macro.stop($1)
 play <letter> = macro.play($1)
-mouse right [<number>] = mouseRelative(if($1 == none(), 1, int($1)), 0)
-mouse down <digit>_0- = mouseRelative(0, if($1 == none(), 1, int($1)))
-mouse left <digit>_0- = mouseRelative(if($1 == none(), -1, -int($1)), 0)
-mouse up <digit>_0- = mouseRelative(0, if($1 == none(), -1, -int($1)))
 grid = state.grid.overlay() 
 move = state.grid.overlay(click=True) 
 gray text = setattr(state.grid 'font_color', [128,128,128]) 
 center mouse = mouseMove(centerPos()) 
-double click = doubleClick() 
 domestic advisor = {f1}
 financial advisor = {f2}
 change civics = {f3}

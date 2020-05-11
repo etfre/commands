@@ -38,4 +38,4 @@ select <number> = {'shift ' $1}
 go to = mouse.move(300, 300) g state.grid.overlay(click=True)
 route to = mouse.move(300, 300) {alt r}  state.grid.overlay(click=True)
 
-stop = {space} mouseMove(centerPos()) 
+stop = {space} mouseMove(centerPos())

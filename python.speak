@@ -1,4 +1,7 @@
-is_active() => 'Visual Studio Code'
+on_load() => setState(language, python) print('python loaded')
+is_active() => window.test('Visual Studio Code') && state.language == python
+on_activate() => print('python language activated')
+on_deactivate() => print('python language deactivated')
 
 pyKeyword := continue | break | pass | true=True | false=False | none=None
 pyKeywordAfter := yield | return | import | with | not
