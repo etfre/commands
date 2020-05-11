@@ -11,13 +11,16 @@ builtin_functions := print | length=len | any | all | open | zip | string=str | 
 new function [<_dictation>] = 'def ():' {left}~3 snake_case($1)
 new class [<_dictation>] = 'class :' {left} snake_case($1)
 if statement = 'if :' {left}
+else if statement = 'elif :' {left}
+else statement = 'else :' {enter}
 for statement = 'for i in :' {left}
+main statement = "if __name__ == '__main__':" {enter} 'main()'
 while statement = 'while :' {left}
 read file = 'with open() as f:' {left}~7
 write file = 'with open(, "w") as f:' {left}~12
-<pyKeyword> = $1
-<pyKeywordAfter> = $1 ' '
-key <pyKeywordBetween> = ' ' $1 ' '
+keyword <pyKeyword> = $1
+keyword <pyKeywordAfter> = $1 ' '
+keyword <pyKeywordBetween> = ' ' $1 ' '
 short key <pyKeywordBetween> = ' ' $1 ' '
 function <builtin_functions> = $1 '()' {left}
 slice = '[::]' 

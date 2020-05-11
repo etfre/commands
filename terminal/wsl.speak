@@ -3,3 +3,4 @@ list files = ls {enter}
 list all = 'ls -a' {enter}
 climb [<number>] = 'cd ..' + '/..' * (int($1 || 1) - 1) {enter}
 drop [<number>] = extensions.run('terminal.wsl', term) extensions.call(term, drop, $1)
+go home = 'cd ~' {enter}

@@ -1,0 +1,31 @@
+is_active() => window.test('Visual Studio Code') && state.language == javascript
+on_activate() => print('javascript mode activated')
+on_deactivate() => print('javascript mode deactivated')
+
+jsKeyword:= continue | break | true | false | this | null | undefined
+jsKeywordAfter:= let | const | return | implements | extends | (type of)=typeof
+jsKeywordBetween:= or='||' | and='&&'
+
+functions := length | (console [dot] log)='console.log' | (index of)='indexOf' | (parse float)=parseFloat | (parse int)=parseInt | (is not a number)=isNaN | push | (object [dot] keys)='Object.keys' | (object [dot] values)='Object.values' | (object [dot] entries)='Object.entries' | (array [dot] is array)='Array.isArray'
+values := array='[]' | object='{}' | null | undefined | string="''" | (double string)='""'
+
+import statement = "import  from '';" {left}~9
+new arrow function = '() => {}' {left} {enter}
+new function [<_dictation>] = 'function () {}' {left} {enter} {up} {end} {left}~4 camel_case($1)
+new method [<_dictation>] = '() {}' {left} {enter} {up} {end} {left}~4 camel_case($1)
+new class [<_dictation>] = 'class  {}' {left} {enter} {up} {end} {left}~2 title_case($1)
+new scope = {end} '{}' {left} {enter}
+if statement = 'if () {}' {left} {enter} {up} {end} {left}~3
+else if statement = 'else if () {}' {left} {enter} {up} {end} {left}~3
+else statement = 'else {}' {left} {enter}
+while statement = 'while () {}' {left} {enter} {up} {end} {left}~3
+for statement = 'for (const item of arr) {}' {left} {enter} {up} {end} {left}~14 {ctrl d}
+ternary condition = ' ?  : ;' {left}~6
+keyword <jsKeyword> = $1
+keyword <jsKeywordAfter> = $1 + ' '
+keyword <jsKeywordBetween> = ' ' + $1 + ' '
+this dot = 'this.'
+call <functions> = $1 {esc} '()' {left}
+property <functions> = $1 {esc}
+initialize <values> = 'const  = ' $1 ';' {left}~(len($1) + 4)
+initialize mutable <values> = 'let  = ' $1 ';' {left}~(len($1) + 4)
