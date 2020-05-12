@@ -19,7 +19,8 @@ if statement = 'if () {}' {left} {enter} {up} {end} {left}~3
 else if statement = 'else if () {}' {left} {enter} {up} {end} {left}~3
 else statement = 'else {}' {left} {enter}
 while statement = 'while () {}' {left} {enter} {up} {end} {left}~3
-for statement = 'for (const item of arr) {}' {left} {enter} {up} {end} {left}~14 {ctrl d}
+for statement = 'for (let i = 0; i < ; i++) {}' {left} {enter} {up} {end} {left}~8
+for each statement = 'for (const item of arr) {}' {left} {enter} {up} {end} {left}~14 {ctrl d}
 ternary condition = ' ?  : ;' {left}~6
 keyword <jsKeyword> = $1
 keyword <jsKeywordAfter> = $1 + ' '

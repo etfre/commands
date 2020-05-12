@@ -1,0 +1,6 @@
+is_active() => 'slack'
+
+jump to = {ctrl k}
+next section [<number>] = {f6}~$1
+previous section [<number>] = {shift f6}~$1
+new message = {ctrl n}

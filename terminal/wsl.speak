@@ -1,6 +1,12 @@
 is_active() => 'evan@'
-list files = ls {enter}
+list files = 'ls | cat -n' {enter}
 list all = 'ls -a' {enter}
 climb [<number>] = 'cd ..' + '/..' * (int($1 || 1) - 1) {enter}
 drop [<number>] = extensions.run('terminal.wsl', term) extensions.call(term, drop, $1)
 go home = 'cd ~' {enter}
+new tab = {'ctrl shift 3'}
+close tab = {'ctrl shift w'}
+tab right = {'ctrl tab'}
+tab left = {'ctrl shift tab'}
+
+pseudo = 'sudo '
