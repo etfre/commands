@@ -1,4 +1,4 @@
-window := firefox=mozilla firefox | chrome=chrome | code=visual studio code | civ=beyond the sword | (command prompt) = 'cmd.exe' | (bash terminal)='evan@'
+window := firefox=mozilla firefox | chrome=chrome | code=visual studio code | civ=beyond the sword | (command prompt) = 'cmd.exe' | (bash terminal)='evan@' | slack
 window_location := (command prompt) = 'start' | firefox = 'C:\\Program Files\\Mozilla Firefox\\firefox.exe' | (bash terminal) = 'wt.exe'
 open <window> [<digit>] = window.focus($1, $2)
 start <window_location> = process.run($1)
