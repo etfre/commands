@@ -1,0 +1,5 @@
+python = 'python '
+django manage = 'python manage.py '
+django run server = 'python manage.py runserver' {enter}
+django make migrations = 'python manage.py makemigrations' {enter}
+django migrate = 'python manage.py migrate' {enter}
