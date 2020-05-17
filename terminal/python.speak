@@ -3,5 +3,5 @@ active virtual environment = 'source bin/activate' {enter}
 pip install = 'pip install '
 django manage = 'python manage.py '
 django run server = wsl.run_and_log('python manage.py runserver')
-django make migrations = 'python manage.py makemigrations' extensions.call('terminal.wsl', 'log_stderr') {enter}
-django migrate = 'python manage.py migrate' {enter}
+django make migrations = wsl.run_and_log('python manage.py makemigrations')
+django migrate = wsl.run_and_log('python manage.py migrate')

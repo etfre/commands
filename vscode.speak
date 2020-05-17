@@ -1,4 +1,5 @@
 is_active() => 'Visual Studio Code'
+cmd(s) => {f1} $s wait(0.5) {enter}
 
 keySequence := undo={ctrl z} | redo={ctrl y}  | (new line) = {ctrl enter} | (new line above) = {ctrl shift enter} | indent = {'ctrl ]'} | outdent = {'ctrl ['}
 movement := before = 'ctrl left' | after = 'ctrl right' | <direction> | expand = 'shift alt right' | contract = 'shift alt left' | first = home | final = end
@@ -33,3 +34,12 @@ command pallette = {f1}
 close tab [<number>] = {ctrl w}~$1
 toggle comment = {ctrl '/'}
 (paste={ctrl v} | cut={ctrl x} | copy={ctrl c}) that [<number>] = $1~$2 
+
+git commit staged = cmd('git: commit staged')
+git commit all = cmd('git: commit all')
+git push = cmd('git: push')
+git pull = cmd('git: pull')
+git stage changes = cmd('git: stage changes')
+git stage all changes = cmd('git: stage all changes')
+git unstage changes = cmd('git: unstage changes')
+git unstage all changes = cmd('git: unstage all changes')
