@@ -1,3 +1,4 @@
+on_load() => extensions.register('terminal.wsl.py', wsl)
 is_active() => 'evan@'
 list files = 'ls | cat -n' {enter}
 list all = 'ls -a' {enter}
@@ -8,5 +9,7 @@ new tab = {'ctrl shift 3'}
 close tab = {'ctrl shift w'}
 tab right = {'ctrl tab'}
 tab left = {'ctrl shift tab'}
+#google that = window.focus('mozilla firefox') window.wait('mozilla firefox', timeout=5, raise_on_timeout=false()) {ctrl l} wait(0.5) 'https://google.com/search?q=' + ' '.join(extensions.call('terminal.wsl', 'read_latest_logfile', none()).split('\n')) {enter}
+google that = wsl.search()
 
 pseudo = 'sudo '

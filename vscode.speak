@@ -1,16 +1,14 @@
 is_active() => 'Visual Studio Code'
 
 keySequence := undo={ctrl z} | redo={ctrl y}  | (new line) = {ctrl enter} | (new line above) = {ctrl shift enter} | indent = {'ctrl ]'} | outdent = {'ctrl ['}
-movement := before = 'ctrl left' | after = 'ctrl right' | <direction> | expand = 'shift alt right' | contract = 'shift alt left'
-region := word={ctrl d} | line={ctrl l}
+movement := before = 'ctrl left' | after = 'ctrl right' | <direction> | expand = 'shift alt right' | contract = 'shift alt left' | first = home | final = end
+region := word={ctrl d} | line={ctrl l} | everything = {ctrl a}
 action := copy = 'ctrl c' | cut = 'ctrl x' | select = ''
 operator := plus='+' | minus='-' | divide='/' | multiply='*' | percentage='%' | exponent='**' | equals='=' | compare='=='
 
 <action> that [<number>] = {$1}~$2
 <keySequence> [<number>] = $1~$2
 [<action>] <movement> [<number>] = {if($1 != none(), 'shift ', '') + $2}~$3
-first = {home}
-final = {end}
 <operator> = ' ' + $1 + ' '
 short <operator> = $1
 pens = '()'
