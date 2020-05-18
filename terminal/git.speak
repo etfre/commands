@@ -1,0 +1,6 @@
+is_active() => 'evan@'
+
+git branch = 'git branch '
+git checkout = 'git checkout '
+git pull = 'git pull '
+git push = 'git push '
