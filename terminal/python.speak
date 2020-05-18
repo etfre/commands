@@ -1,3 +1,5 @@
+is_active() => window.test('evan@') && state.language == python
+
 python = 'python '
 active virtual environment = 'source bin/activate' {enter}
 pip install = 'pip install '

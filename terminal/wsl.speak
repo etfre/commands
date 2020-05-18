@@ -10,5 +10,6 @@ close tab = {'ctrl shift w'}
 tab right = {'ctrl tab'}
 tab left = {'ctrl shift tab'}
 google <number> = wsl.search(lines=int($1))
+run with logging = wsl.run_and_log('')
 
 pseudo = 'sudo '

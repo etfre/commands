@@ -6,7 +6,7 @@ digit := (0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)
 modifier := control='ctrl ' | alt='alt ' | shift='shift '
 number := <digit>+
 direction := north=up | south=down | east=right | west=left
-key := (escape=esc | space | delete=del | snipe=back | enter | <direction> | (tab key)=tab | tilda='~' | carrot='^' | ampersand='&' | dollar='$' | (at sign)='@' | exclamation='!' | (pound sign)='#' | percentage='%' | (star sign)='*' | home | dash='-' | downscore='_' | colon=':' | semicolon=';' | comma=',' | pipe='|' | slash='/' | backslash='\\' | period='.' | single="'" | double='"' | (open pen)='(' | (close pen)=')' | (open brace)='{' | (close brace)='}' | (open block)='[' | (close block)=']')
+key := ((page down) = pagedown | (page up) = pageup | escape=esc | space | delete=del | snipe=back | enter | <direction> | (tab key)=tab | tilda='~' | carrot='^' | ampersand='&' | dollar='$' | (at sign)='@' | exclamation='!' | (pound sign)='#' | percentage='%' | (star sign)='*' | home | dash='-' | downscore='_' | colon=':' | semicolon=';' | comma=',' | pipe='|' | slash='/' | backslash='\\' | period='.' | single="'" | double='"' | (open pen)='(' | (close pen)=')' | (open brace)='{' | (close brace)='}' | (open block)='[' | (close block)=']')
 mouseRelative(x, y) => mouse.move(int($x) * 5, int($y) * 5, false())  
 
 literal <_dictation> = $1
