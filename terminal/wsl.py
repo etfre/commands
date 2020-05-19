@@ -21,6 +21,33 @@ def linux_path(win_path):
 def new_logfile_path():
     return os.path.join(log_dir(), 'osspeak_log.txt')
 
+def checkout_numbered_branch(num):
+    fd, temp_name = tempfile.mkstemp()
+    read_name = linux_path(temp_name)
+    keyboard.KeyPress.from_raw_text(f'git branch > {read_name}').send()
+    keyboard.KeyPress.from_space_delimited_string('enter').send()
+    num = int(num)
+    try:
+        for i in range(200):
+            if os.stat(temp_name).st_size > 0:
+                with open(temp_name) as f:
+                    for i, line in enumerate(f, start=1):
+                        if i == num:
+                            if line[0] == '*':
+                                line = line[1:]
+                            line = line.lstrip()
+                            line = line.rstrip("\n")
+                            keyboard.KeyPress.from_raw_text(f'git checkout "{line}"').send()
+                            keyboard.KeyPress.from_space_delimited_string('enter').send()
+                            break
+                break
+            time.sleep(0.01)
+    finally:
+        if os.path.isfile(temp_name):
+            os.close(fd)
+            os.remove(temp_name)
+
+
 def drop(num):
     fd, temp_name = tempfile.mkstemp()
     read_name = linux_path(temp_name)

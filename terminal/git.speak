@@ -4,3 +4,6 @@ git branch = 'git branch '
 git checkout = 'git checkout '
 git pull = 'git pull '
 git push = 'git push '
+git list branches = 'git branch | cat -n' {enter}
+git checkout <number> = wsl.checkout_numbered_branch(int($1))
+
