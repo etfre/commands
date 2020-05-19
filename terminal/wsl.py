@@ -21,10 +21,10 @@ def linux_path(win_path):
 def new_logfile_path():
     return os.path.join(log_dir(), 'osspeak_log.txt')
 
-def checkout_numbered_branch(num):
+def navigate_list(gather_cmd, exec_cmd, num, modify_line=None):
     fd, temp_name = tempfile.mkstemp()
     read_name = linux_path(temp_name)
-    keyboard.KeyPress.from_raw_text(f'git branch > {read_name}').send()
+    keyboard.KeyPress.from_raw_text(f'{gather_cmd} > {read_name}').send()
     keyboard.KeyPress.from_space_delimited_string('enter').send()
     num = int(num)
     try:
@@ -33,11 +33,10 @@ def checkout_numbered_branch(num):
                 with open(temp_name) as f:
                     for i, line in enumerate(f, start=1):
                         if i == num:
-                            if line[0] == '*':
-                                line = line[1:]
-                            line = line.lstrip()
+                            if modify_line:
+                                line = modify_line(line)
                             line = line.rstrip("\n")
-                            keyboard.KeyPress.from_raw_text(f'git checkout "{line}"').send()
+                            keyboard.KeyPress.from_raw_text(f'{exec_cmd} "{line}"').send()
                             keyboard.KeyPress.from_space_delimited_string('enter').send()
                             break
                 break
@@ -47,30 +46,16 @@ def checkout_numbered_branch(num):
             os.close(fd)
             os.remove(temp_name)
 
+def checkout_numbered_branch(num):
+    def modify_line(line):
+        if line.startswith('*'):
+            line = line[1:]
+        return line.lstrip()
+    return navigate_list('git branch', 'git checkout', num, modify_line=modify_line)
 
 def drop(num):
-    fd, temp_name = tempfile.mkstemp()
-    read_name = linux_path(temp_name)
-    keyboard.KeyPress.from_raw_text(f'ls > {read_name}').send()
-    keyboard.KeyPress.from_space_delimited_string('enter').send()
-    num = int(num)
-    try:
-        for i in range(200):
-            if os.stat(temp_name).st_size > 0:
-                with open(temp_name) as f:
-                    for i, line in enumerate(f, start=1):
-                        if i == num:
-                            line = line.rstrip("\n")
-                            keyboard.KeyPress.from_raw_text(f'cd "{line}"').send()
-                            keyboard.KeyPress.from_space_delimited_string('enter').send()
-                            break
-                break
-            time.sleep(0.01)
-    finally:
-        if os.path.isfile(temp_name):
-            os.close(fd)
-            os.remove(temp_name)
-
+    return navigate_list('ls', 'cd', num)
+    
 def run_and_log(s):
     path = linux_path(new_logfile_path())
     keyboard.KeyPress.from_raw_text(f'{s}|& tee {path}').send()
