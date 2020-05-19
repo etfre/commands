@@ -102,11 +102,11 @@ def tail(f, lines):
     block_number = -1
     blocks = []
     while lines_to_go > 0 and block_end_byte > 0:
-        if (block_end_byte - BLOCK_SIZE > 0):
-            f.seek(block_number*BLOCK_SIZE, 2)
+        if block_end_byte - BLOCK_SIZE > 0:
+            f.seek(block_number * BLOCK_SIZE, 2)
             blocks.append(f.read(BLOCK_SIZE))
         else:
-            f.seek(0,0)
+            f.seek(0, 0)
             blocks.append(f.read(block_end_byte))
         lines_found = blocks[-1].count(b'\n')
         lines_to_go -= lines_found
