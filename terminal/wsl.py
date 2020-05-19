@@ -123,8 +123,8 @@ def search(file_name=None, lines=None):
     file_text = read_logfile(file_name, lines)
     formatted_text = ' '.join(file_text.split('\n'))
     qparams = urllib.parse.urlencode({'q': formatted_text})
-    window.focus('mozilla firefox')
-    window.wait('mozilla firefox', timeout=5, raise_on_timeout=True)
+    window.focus('google chrome')
+    window.wait('google chrome', timeout=5, raise_on_timeout=True)
     keyboard.KeyPress.from_space_delimited_string('ctrl l').send()
     time.sleep(0.2)
     url = f'https://google.com/search?{qparams}'
