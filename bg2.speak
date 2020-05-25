@@ -1,4 +1,4 @@
-priority: 2
+priority() => 2
 is_active() => "baldur's gate"
 on_activate() => setState(grid, screengrid.Grid()) setattr(state.grid, 'font_color', [128,128,128]) print('bg2 activate') 
 on_deactivate() => keyboard.remove_delay(/numkey\d/) print('bg2 deactivate')

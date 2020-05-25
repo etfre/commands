@@ -1,15 +1,30 @@
 on_load() => extensions.register('terminal.wsl.py', wsl)
 is_active() => 'evan@'
+
+paths := home='~' | (oh see h)='~/lp/och' | downloads='/c/users/fredere1/downloads' | projects='~/lp'
+
+unzip = 'unzip '
 list files = 'ls | cat -n' {enter}
 list all = 'ls -a' {enter}
 climb [<number>] = 'cd ..' + '/..' * (int($1 || 1) - 1) {enter}
-drop [<number>] = extensions.call('terminal.wsl', drop, $1)
-go home = 'cd ~' {enter}
+drop [<number>] = wsl.drop($1)
 new tab = {'ctrl shift 3'}
 close tab = {'ctrl shift w'}
 tab right = {'ctrl tab'}
 tab left = {'ctrl shift tab'}
 google <number> = wsl.search(lines=int($1))
 run with logging = wsl.run_and_log('')
+go to <paths> = 'cd ' $1 {enter}
+path <paths> = $1
+new pane right = {'alt shift +'}
+new pane down = {'alt shift -'}
+focus (right | left | up | down) = {'alt ' $1}
+copy output = wsl.to_clipboard()
+copy <number> = wsl.list_files_to_clipboard($1)
+copy location = 'pwd' wsl.to_clipboard()
 
 pseudo = 'sudo '
+move = 'mv '
+make deer = 'mkdir '
+remove = 'rm '
+cd = 'cd '

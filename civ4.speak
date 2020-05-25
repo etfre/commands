@@ -1,4 +1,4 @@
-priority: 2
+priority() => 2
 is_active() => 'civ iv: beyond the sword'
 on_activate() => setState(grid, screengrid.Grid()) keyboard.add_delay(/numkey\d/, 1) print('civ 4 activate')
 on_deactivate() => keyboard.remove_delay(/numkey\d/) print('civ 4 deactivate')

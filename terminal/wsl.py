@@ -1,4 +1,4 @@
-from recognition.actions.library import _keyboard as keyboard, window
+from recognition.actions.library import _keyboard as keyboard, window, clipboard
 import urllib.parse
 import time
 import os
@@ -33,12 +33,15 @@ def navigate_list(gather_cmd, exec_cmd, num, modify_line=None):
                 with open(temp_name) as f:
                     for i, line in enumerate(f, start=1):
                         if i == num:
+                            line = line.rstrip("\n")
                             if modify_line:
                                 line = modify_line(line)
-                            line = line.rstrip("\n")
-                            keyboard.KeyPress.from_raw_text(f'{exec_cmd} "{line}"').send()
-                            keyboard.KeyPress.from_space_delimited_string('enter').send()
-                            break
+                            if isinstance(exec_cmd, str):
+                                keyboard.KeyPress.from_raw_text(f'{exec_cmd} "{line}"').send()
+                                keyboard.KeyPress.from_space_delimited_string('enter').send()
+                                break
+                            else:
+                                return exec_cmd(line)
                 break
             time.sleep(0.01)
     finally:
@@ -53,8 +56,19 @@ def checkout_numbered_branch(num):
         return line.lstrip()
     return navigate_list('git branch', 'git checkout', num, modify_line=modify_line)
 
+def list_files_to_clipboard(num):
+    
+    def exec_cmd(line):
+        clipboard.set(line)
+    return navigate_list('ls', exec_cmd, num)
+
 def drop(num):
     return navigate_list('ls', 'cd', num)
+    
+def to_clipboard():
+    def exec_cmd(line):
+        clipboard.set(line)
+    return navigate_list('', exec_cmd, 1)
     
 def run_and_log(s):
     path = linux_path(new_logfile_path())
