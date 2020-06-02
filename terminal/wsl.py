@@ -1,10 +1,8 @@
-from recognition.actions.library import _keyboard as keyboard, window, clipboard
+from recognition.actions.library import _keyboard as keyboard, window, clipboard, stdlib
 import urllib.parse
 import time
 import os
 import tempfile
-
-MOUNT_ROOT = '/mnt'
 
 def log_dir():
     tdir = os.path.join(tempfile.gettempdir(), 'osspeak_std')
@@ -16,7 +14,8 @@ def log_dir():
 
 def linux_path(win_path):
     win_path_end = win_path.replace(os.sep, '/')[2:]
-    return f'{MOUNT_ROOT}/c{win_path_end}'
+    mount_root = stdlib.namespace['state'].WSL_MOUNT_ROOT
+    return f'{mount_root}/c{win_path_end}'
 
 def new_logfile_path():
     return os.path.join(log_dir(), 'osspeak_log.txt')
