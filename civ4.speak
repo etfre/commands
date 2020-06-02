@@ -42,6 +42,7 @@ pan <edges> = mouseMove($1)
 zoom in [<number>] = (mouse.wheel(1) wait(.1))~$1
 zoom out [<number>] = (mouse.wheel(-1) wait(.1))~$1
 toggle interface = {alt i}
+toggle world builder = {ctrl w}
 
 go to = mouse.move(300, 300) g state.grid.overlay(click=True)
 route to = mouse.move(300, 300) {alt r}  state.grid.overlay(click=True)
@@ -49,3 +50,4 @@ route to = mouse.move(300, 300) {alt r}  state.grid.overlay(click=True)
 build [a] road = r
 sleep | fortify = f
 skip turn = {space}
+build city = b
