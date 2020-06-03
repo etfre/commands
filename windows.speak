@@ -1,4 +1,4 @@
-window := firefox=mozilla firefox | chrome=chrome | code=visual studio code | civ=beyond the sword | (command prompt) = /(cmd\.exe|command prompt)/ | (windows terminal)='evan@' | slack
+window := firefox=mozilla firefox | teams='microsoft teams' | outlook | chrome=chrome | code=visual studio code | (civ four)=beyond the sword | (command prompt) = /(cmd\.exe|command prompt)/ | (windows terminal)='evan@' | slack
 window_location := (command prompt) = 'start' | firefox = 'C:\\Program Files\\Mozilla Firefox\\firefox.exe' | (windows terminal) = 'wt.exe' | chrome='C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'
 open <window> [<digit>] = window.focus($1, $2)
 start <window_location> = process.run($1)
