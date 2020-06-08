@@ -9,7 +9,6 @@ region := word={ctrl d} | line={ctrl l} | everything = {ctrl a}
 action := copy = 'ctrl c' | cut = 'ctrl x' | select = ''
 operator := plus='+' | minus='-' | divide='/' | multiply='*' | percentage='%' | exponent='**' | equals='=' | compare='==' | (triple compare) = '==='
 
-<action> that [<number>] = {$1}~$2
 <keySequence> [<number>] = $1~$2
 [<action>] <movement> [<number>] = {if($1 != none(), 'shift ', '') + $2}~$3
 <operator> = ' ' + $1 + ' '
@@ -36,7 +35,6 @@ new tab = {ctrl n}
 command pallette = {f1}
 close tab [<number>] = {ctrl w}~$1
 toggle comment = {'ctrl /'}
-(paste={ctrl v} | cut={ctrl x} | copy={ctrl c}) that [<number>] = $1~$2 
 go to definition = {f12}
 rename that = {f2}
 

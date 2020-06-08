@@ -1,2 +1,3 @@
 *.pyc
+civ4/
 overrides.py

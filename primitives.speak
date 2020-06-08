@@ -22,10 +22,10 @@ wait <number> = wait($1)
 click = click()
 right click = mouse.right_click()
 double click = mouse.double_click()
-mouse right [<number>] = mouseRelative(if($1 == none(), 1, int($1)), 0)
-mouse down <digit>_0- = mouseRelative(0, if($1 == none(), 1, int($1)))
-mouse left <digit>_0- = mouseRelative(if($1 == none(), -1, -int($1)), 0)
-mouse up <digit>_0- = mouseRelative(0, if($1 == none(), -1, -int($1)))
-paste that = {ctrl v}
+mouse right [<number>] = mouseRelative(if($1 == none(), 1, $1), 0)
+mouse down [<number>] = mouseRelative(0, if($1 == none(), 1, $1))
+mouse left [<number>] = mouseRelative(if($1 == none(), -1, -$1), 0)
+mouse up [<number>] = mouseRelative(0, if($1 == none(), -1, -$1))
+(paste={ctrl v} | cut={ctrl x} | copy={ctrl c}) that [<number>] = $1~$2 
 
 language (python | javascript) = setState(language, $1)
