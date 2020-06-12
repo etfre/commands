@@ -29,3 +29,5 @@ mouse up [<number>] = mouseRelative(0, if($1 == none(), -1, -$1))
 (paste={ctrl v} | cut={ctrl x} | copy={ctrl c}) that [<number>] = $1~$2 
 
 language (python | javascript) = setState(language, $1)
+
+launch w s l = 'wsl.exe' {enter}
