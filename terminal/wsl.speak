@@ -22,6 +22,8 @@ focus (right | left | up | down) = {'alt ' $1}
 copy output = wsl.to_clipboard()
 copy <number> = wsl.list_files_to_clipboard($1)
 copy location = 'pwd' wsl.to_clipboard()
+launch code = 'code .' {enter}
+
 
 pseudo = 'sudo '
 move = 'mv '
