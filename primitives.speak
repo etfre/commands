@@ -2,7 +2,7 @@ on_load() => setState(primitives, true())
 is_active() => state.primitives
 
 letter := (alpha=a | bravo=b | charlie=c | danger=d | eureka=e | foxtrot=f | gorilla=g | hotel=h | india=i | juliet=j | kilo=k | lima=l | michael=m | november=n | oscar=o | peter=p | quiet=q | romeo=r | sierra=s | tango=t | uniform=u | victor=v | whiskey=w | xray=x | yankee=y | zulu=z)
-digit := (0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)
+digit := (0='0' | 1='1' | 2='2' | 3='3' | 4='4' | 5='5' | 6='6' | 7='7' | 8='8' | 9='9')
 modifier := control='ctrl ' | alt='alt ' | shift='shift '
 number := <digit>+
 direction := north=up | south=down | east=right | west=left
