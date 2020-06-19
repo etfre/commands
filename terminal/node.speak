@@ -1,8 +1,10 @@
-is_active() => window.test('evan@') && state.language == javascript
+is_active() => window.test('evan@')
 
 yarn install = 'yarn install ' 
 yarn dev = 'yarn dev '
 yarn start = 'yarn start '
 yarn build = 'yarn build '
 yarn test = 'yarn test '
+yarn add = 'yarn add '
+yarn remove = 'yarn remove '
 node = 'node ' 

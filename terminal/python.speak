@@ -1,4 +1,4 @@
-is_active() => window.test('evan@') && state.language == python
+is_active() => window.test('evan@')
 
 python = 'python '
 active virtual environment = 'source bin/activate' {enter}
