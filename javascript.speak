@@ -7,7 +7,7 @@ jsKeywordAfter:= let | const | return | implements | extends | (type of)=typeof
 jsKeywordBetween:= or='||' | and='&&'
 
 functions := length | (console [dot] log)='console.log' | (index of)='indexOf' | (parse float)=parseFloat | (parse int)=parseInt | (is not a number)=isNaN | push | (object [dot] keys)='Object.keys' | (object [dot] values)='Object.values' | (object [dot] entries)='Object.entries' | (array [dot] is array)='Array.isArray'
-values := array='[]' | object='{}' | null | undefined | string="''" | (double string)='""'
+values := array='[]' | object='{}' | null | undefined | string="''" | (double string)='""' | empty=''
 
 import statement = "import  from '';" {left}~9
 new arrow function = '() => {}' {left} {enter}
