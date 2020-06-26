@@ -1,4 +1,3 @@
-on_load() => setState(language, python)
 is_active() => window.test('Visual Studio Code') && state.language == python
 #on_activate() => print('python language activated') engine.set_end_silence_timeout(0) engine.set_end_silence_timeout_ambiguous(0)
 #on_deactivate() => print('python language deactivated')
