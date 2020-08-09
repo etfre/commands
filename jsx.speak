@@ -1,0 +1,6 @@
+is_active() => window.test('Visual Studio Code') && state.language == javascript
+
+element(el) => '<' + $el + '></' + $el + '>' {left}~(len($el) + 3)
+
+new div = element(div)
+new tag = '<></>' {left}~4 {shift right} {ctrl d} {left}
