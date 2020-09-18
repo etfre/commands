@@ -7,7 +7,7 @@ positive_digit := (1='1' | 2='2' | 3='3' | 4='4' | 5='5' | 6='6' | 7='7' | 8='8'
 modifier := control='ctrl ' | alt='alt ' | shift='shift '
 number := <digit>+
 direction := north=up | south=down | east=right | west=left
-key := ((page down) = pagedown | (greater than) = '>' | (less than) = '<' | (page up) = pageup | escape=esc | space | delete=del | snipe=back | enter | <direction> | (dollar sign)='$' | (tab key)=tab | tilda='~' | carrot='^' | ampersand='&' | dollar='$' | (at sign)='@' | exclamation='!' | question='?' | (pound sign)='#' | percentage='%' | (star sign)='*' | (home key)=home | dash='-' | downscore='_' | colon=':' | semicolon=';' | comma=',' | pipe='|' | slash='/' | backslash='\\' | period='.' | single="'" | double='"' | (open pen)='(' | (close pen)=')' | (open brace)='{' | (close brace)='}' | (open block)='[' | (close block)=']')
+key := ((page down) = pagedown | (greater than) = '>' | (less than) = '<' | (page up) = pageup | escape=esc | space | delete=del | snipe=back | enter | <direction> | (dollar sign)='$' | (tab key)=tab | tilda='~' | carrot='^' | ampersand='&' | (end key)='end' | dollar='$' | (at sign)='@' | exclamation='!' | question='?' | (pound sign)='#' | percentage='%' | (star sign)='*' | (home key)=home | dash='-' | downscore='_' | colon=':' | semicolon=';' | comma=',' | pipe='|' | slash='/' | backslash='\\' | period='.' | single="'" | double='"' | (open pen)='(' | (close pen)=')' | (open brace)='{' | (close brace)='}' | (open block)='[' | (close block)=']')
 mouseRelative(x, y) => mouse.move(int($x) * 5, int($y) * 5, false())  
 
 literal <_dictation> = $1
@@ -20,13 +20,13 @@ hold <modifier>_1-3 (<letter> | <key>) [<number>] = {$1 $2 + '_hold'}~$3
 release <modifier>_1-3 (<letter> | <key>) [<number>] = {$1 $2 + '_release'}~$3
 number <number> = $1
 wait <number> = wait($1)
-click = click()
+mouse click = click()
 right click = mouse.right_click()
 double click = mouse.double_click()
-mouse right [<number>] = mouseRelative(if($1 == none(), 1, $1), 0)
-mouse down [<number>] = mouseRelative(0, if($1 == none(), 1, $1))
-mouse left [<number>] = mouseRelative(if($1 == none(), -1, -$1), 0)
-mouse up [<number>] = mouseRelative(0, if($1 == none(), -1, -$1))
+#mouse right [<number>] = mouseRelative(if($1 == none(), 1, $1), 0)
+#mouse down [<number>] = mouseRelative(0, if($1 == none(), 1, $1))
+#mouse left [<number>] = mouseRelative(if($1 == none(), -1, -$1), 0)
+#mouse up [<number>] = mouseRelative(0, if($1 == none(), -1, -$1))
 (paste={ctrl v} | cut={ctrl x} | copy={ctrl c}) that [<number>] = $1~$2 
 
 language (python | javascript) = setState(language, $1)

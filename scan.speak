@@ -1,0 +1,7 @@
+on_load() => extensions.register('scan.py', 'scan')
+
+scan north [<number>] = scan.scan(y=-($1 || 1))
+scan south [<number>] = scan.scan(y=$1 || 1)
+scan east [<number>] = scan.scan(x=$1 || 1)
+scan west [<number>] = scan.scan(x=-($1 || 1))
+stop scan = scan.stop() {ctrl c}
