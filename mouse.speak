@@ -1,7 +1,7 @@
 mouseRelative(x, y) => mouse.move(int($x) * 5, int($y) * 5, false())
 on_load() => setState(grid, screengrid.Grid())
 
-click = click()
+mouse click = click()
 right click = mouse.right_click()
 double click = mouse.double_click()
 (mouse | drag) east [<number>] = if($1 == drag, mouse.press() wait(.2)) mouseRelative(if($2 == none(), 1, int($2)), 0) wait(.1)
