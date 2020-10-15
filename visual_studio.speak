@@ -1,0 +1,53 @@
+is_active() => "microsoft visual studio"
+add class = {shift alt c}
+
+cmd(s) => {f1} $s wait(0.5) {enter}
+
+keySequence := undo={ctrl z} | redo={ctrl y}  | (new line) = {ctrl enter} | (new line above) = {ctrl shift enter} | indent = {'ctrl ]'} | outdent = {'ctrl ['}
+movement := before = 'ctrl left' | after = 'ctrl right' | <direction> | expand = 'shift alt right' | contract = 'shift alt left' | first = home | final = end
+region := word={ctrl shift d} | line={ctrl l} | everything = {ctrl a}
+action := copy = 'ctrl c' | cut = 'ctrl x' | select = ''
+operator := plus='+' | minus='-' | divide='/' | multiply='*' | percentage='%' | exponent='**' | equals='=' | compare='==' | (triple compare) = '==='
+
+<keySequence> [<number>] = $1~$2
+[<action>] <movement> [<number>] = {if($1 != none(), 'shift ', '') + $2}~$3
+<operator> = ' ' + $1 + ' '
+short <operator> = $1
+pens = '()'
+braces = '{}'
+blocks = '[]'
+<action> <region> [<number>] = $2~$3 {$1} if($1 == 'ctrl c', {esc})  
+go to line <number> = {ctrl g} $1 {enter}
+select line [<number>] = {ctrl l}~$1
+flip north [<number>] = {alt up}~$1
+flip south [<number>] = {alt down}~$1
+duplicate north [<number>] = {shift alt up}~$1
+duplicate south [<number>] = {shift alt down}~$1
+add cursor north [<number>] = {ctrl alt up}~$1
+add cursor south [<number>] = {ctrl alt down}~$1
+fuzzy = {ctrl p}
+open recent = {ctrl r}
+file explorer = {ctrl shift e}
+search file = {ctrl f}
+search project = {ctrl shift f}
+focus search results = {tab}~5
+focus next [<number>] = {f6}~$1
+source control = {ctrl shift g} g
+tab left [<number>] = {ctrl pageup}~$1
+tab right [<number>] = {ctrl pagedown}~$1
+new tab = {ctrl n}
+command pallette = {f1}
+close tab [<number>] = {ctrl w}~$1
+toggle comment = {'ctrl /'}
+go to definition = {f12}
+rename that = {f2}
+
+git commit staged = cmd('git: commit staged')
+git commit all = cmd('git: commit all')
+git push = cmd('git: push')
+git pull = cmd('git: pull')
+git stage changes = cmd('git: stage changes')
+git stage all changes = cmd('git: stage all changes')
+git unstage changes = cmd('git: unstage changes')
+git unstage all changes = cmd('git: unstage all changes')
+git create branch = cmd('git: create branch')
