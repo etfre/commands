@@ -7,7 +7,7 @@ keySequence := undo={ctrl z} | redo={ctrl y}  | (new line) = {ctrl enter} | (new
 movement := before = 'ctrl left' | after = 'ctrl right' | <direction> | expand = 'shift alt right' | contract = 'shift alt left' | first = home | final = end
 region := word={ctrl d} | line={ctrl l} | everything = {ctrl a}
 action := copy = 'ctrl c' | cut = 'ctrl x' | select = ''
-operator := plus='+' | minus='-' | divide='/' | multiply='*' | percentage='%' | exponent='**' | equals='=' | compare='==' | (triple compare) = '==='
+operator := plus='+' | minus='-' | divide='/' | multiply='*' | percentage='%' | exponent='**' | equals='=' | compare='==' | (triple compare) = '===' | (greater than) = '>' | (less than) = '<' | (greater equals) = '>=' | (less equals) = '<='
 
 <keySequence> [<number>] = $1~$2
 [<action>] <movement> [<number>] = {if($1 != none(), 'shift ', '') + $2}~$3

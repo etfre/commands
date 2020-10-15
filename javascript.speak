@@ -27,6 +27,9 @@ keyword <jsKeywordAfter> = $1 + ' '
 keyword <jsKeywordBetween> = ' ' + $1 + ' '
 this dot = 'this.'
 call <functions> = $1 {esc} '()' {left}
-property <functions> = $1 {esc}
+function <functions> = $1 {esc}
 initialize <values> = 'const  = ' $1 ';' {left}~(len($1) + 4)
 initialize mutable <values> = 'let  = ' $1 ';' {left}~(len($1) + 4)
+value <values> = $1
+try catch = 'try {}' {left} {enter} {down} {ctrl enter} 'catch (e) {}' {left} {enter} {up}~3
+new (set=Set | map=Map) = 'new ' + $1 + '()'
