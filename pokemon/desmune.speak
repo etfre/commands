@@ -1,0 +1,14 @@
+direction := north=up | south=down | east=right | west=left
+digit := 1 | 2 | 3 | 4
+
+<direction> = directinput.release_all() directinput.hold($1)
+<digit> <direction> = directinput.release_all() loop(directinput.send([$2]) wait(0.2), $1)
+enter = {enter}
+space = {space}
+<letter_alias> = directinput.send([$1])
+stop = directinput.release_all()
+on_deactivate() => directinput.release_all()
+is_active() => 'SoulSilver'
+on_activate() => engine.set_end_silence_timeout(0) engine.set_end_silence_timeout_ambiguous(0)
+
+letter_alias := (escape|go back|exit)=z | (interact | select)=x | menu=s
