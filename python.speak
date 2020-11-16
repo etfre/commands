@@ -2,15 +2,15 @@ is_active() => window.test('Visual Studio Code') && state.language == python
 #on_activate() => print('python language activated') engine.set_end_silence_timeout(0) engine.set_end_silence_timeout_ambiguous(0)
 #on_deactivate() => print('python language deactivated')
 
-pyKeyword := continue | break | pass
 pyKeywordAfter := yield | return | import | with | not
 pyKeywordBetween := in | is | and | or
-builtin_functions := print | length=len | any | all | open | zip | string=str | type | super | set | range | representation=repr | (is instance) = isinstance | id | min | max | input | float | integer=int | reversed | enumerate | sorted
-pyValue := list='[]' | dictionary='{}' | none=None | string="''" | (double string)='""' |  true=True | false=False
+builtin_functions := print | sum | (two pull)=tuple | length=len | (get attribute)=getattr | any | all | dear=dir | open | zip | string=str | type | super | set | range | representation=repr | (is instance) = isinstance | id | min | max | input | float | integer=int | reversed | enumerate | sorted
+pyValue := list='[]' | dictionary='{}' | none=None | string="''" | (double string)='""' |  true=True | false=False | slice='[:]' | (step slice)='[::]'
 pyError := (key error)=KeyError | (runtime error)=RuntimeError | (type error)=TypeError | (value error)=ValueError | exception=Exception | (oh es error)=OSError | (assertion error)=AssertionError | (attribute error)=AttributeError | (index error)=IndexError | (not implemented error)=NotImplementedError | (recursion error)=RecursionError
 
 initialize <pyValue> = ' = ' $1 {left}~(len($1) + 3)
-named <pyValue> = '=' $1 {left}~(len($1) + 1)
+new <pyValue> = $1
+short initialize <pyValue> = '=' $1 {left}~(len($1) + 1)
 new function [<_dictation>] = 'def ():' {left}~3 snake_case($1)
 new method [<_dictation>] = 'def (self):' {left}~7 snake_case($1)
 new class [<_dictation>] = 'class :' {left} snake_case($1)
@@ -23,14 +23,11 @@ main statement = "if __name__ == '__main__':" {enter} 'main()'
 while loop = 'while :' {left}
 read file = 'with open() as f:' {left}~7
 write file = 'with open(, "w") as f:' {left}~12
-keyword <pyKeyword> = $1
-keyword <pyKeywordAfter> = $1 ' '
-keyword <pyKeywordBetween> = ' ' $1 ' '
-short key <pyKeywordBetween> = ' ' $1 ' '
-call (<builtin_functions> | <pyError>) = $1 '()' {left}
+continue | break | pass = $1 {enter}
+keyword <pyKeywordAfter> = $1 + ' '
+keyword <pyKeywordBetween> = ' ' + $1 + ' '
+call (<builtin_functions> | <pyError>) = $1 + '()' {left}
 call that = '()' {left}
 index that = '[]' {left}
-slice = '[::]' 
-new string = "''" {left}
 <pyError> = $1
 try except = 'try:' {enter} 'pass' {ctrl enter} 'except:' {ctrl enter} 'pass' {esc} {up}~2 {ctrl d}
