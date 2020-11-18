@@ -44,6 +44,7 @@ close tab [<number>] = {ctrl w}~$1
 toggle comment = {'ctrl /'}
 go to definition = {f12}
 rename that = {f2}
+save file = {ctrl s}
 
 git commit staged = cmd('git: commit staged')
 git commit all = cmd('git: commit all')
