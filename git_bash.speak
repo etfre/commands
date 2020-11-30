@@ -1,0 +1,2 @@
+is_active() => window.test('MINGW64')
+on_activate() => setState('WSL_MOUNT_ROOT', '')

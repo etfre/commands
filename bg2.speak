@@ -24,7 +24,7 @@ mouse down <digit>_0- = mouseRelative(0, if($1 == none(), 1, int($1)))
 mouse left <digit>_0- = mouseRelative(if($1 == none(), -1, -int($1)), 0)
 mouse up <digit>_0- = mouseRelative(0, if($1 == none(), -1, -int($1)))
 grid = state.grid.overlay() 
-move = state.grid.overlay(click=True) 
+move = state.grid.overlay(on_done=mouse.click) 
 click = mouse.click()
 center mouse = mouseMove(centerPos()) 
 double click = doubleClick() 
@@ -35,7 +35,7 @@ toggle interface = {alt i}
 f1 | f2 | f3 | f4 | f5 | f6 | f7 | f8 | f9 | f10 | f11 | f12  = {$1}
 select <number> = {'shift ' $1}
 
-go to = mouse.move(300, 300) g state.grid.overlay(click=True)
-route to = mouse.move(300, 300) {alt r}  state.grid.overlay(click=True)
+go to = mouse.move(300, 300) g state.grid.overlay(on_done=mouse.click)
+route to = mouse.move(300, 300) {alt r}  state.grid.overlay(on_done=mouse.click)
 
 stop = {space} mouseMove(centerPos())
