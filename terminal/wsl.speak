@@ -23,7 +23,9 @@ copy output = wsl.to_clipboard()
 copy <number> = wsl.list_files_to_clipboard($1)
 copy location = 'pwd' wsl.to_clipboard()
 launch code = 'code .' {enter}
-
+source <number> = wsl.navigate_list('ls', 'source', $1)
+python <number> = wsl.navigate_list('ls', 'python', $1)
+execute <number> = wsl.navigate_list('ls', '', $1)
 
 pseudo = 'sudo '
 move = 'mv '

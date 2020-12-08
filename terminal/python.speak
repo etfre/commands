@@ -2,6 +2,7 @@ is_active() => window.test('evan@')
 
 python = 'python '
 active virtual environment = 'source bin/activate' {enter}
+exit virtual environment = deactivate {enter}
 pip install = 'pip install '
 django manage = 'python manage.py '
 django run server = wsl.run_and_log('python manage.py runserver')
