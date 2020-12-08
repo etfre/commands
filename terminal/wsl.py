@@ -1,6 +1,7 @@
 from recognition.actions.library import _keyboard as keyboard, window, clipboard, stdlib
 import urllib.parse
 import time
+import uuid
 import os
 import tempfile
 
@@ -21,32 +22,32 @@ def new_logfile_path():
     return os.path.join(log_dir(), 'osspeak_log.txt')
 
 def navigate_list(gather_cmd, exec_cmd, num, modify_line=None):
-    fd, temp_name = tempfile.mkstemp()
-    read_name = linux_path(temp_name)
-    keyboard.KeyPress.from_raw_text(f'{gather_cmd} > {read_name}').send()
-    keyboard.KeyPress.from_space_delimited_string('enter').send()
-    num = int(num)
-    try:
-        for i in range(200):
-            if os.stat(temp_name).st_size > 0:
-                with open(temp_name) as f:
-                    for i, line in enumerate(f, start=1):
-                        if i == num:
-                            line = line.rstrip("\n")
-                            if modify_line:
-                                line = modify_line(line)
-                            if isinstance(exec_cmd, str):
-                                keyboard.KeyPress.from_raw_text(f'{exec_cmd} "{line}"').send()
-                                keyboard.KeyPress.from_space_delimited_string('enter').send()
-                                break
-                            else:
-                                return exec_cmd(line)
-                break
+    with clipboard.save_current():
+        tmp_clip = str(uuid.uuid4())
+        clipboard.set(tmp_clip)
+        assert clipboard.get() == tmp_clip
+        keyboard.KeyPress.from_raw_text(f'{gather_cmd} | clip.exe').send()
+        keyboard.KeyPress.from_space_delimited_string('enter').send()
+        num = int(num)
+        clip_text = clipboard.get()
+        s = time.time()
+        while clip_text == tmp_clip:
             time.sleep(0.01)
-    finally:
-        if os.path.isfile(temp_name):
-            os.close(fd)
-            os.remove(temp_name)
+            clip_text = clipboard.get()
+            if s + 5 < time.time():
+                raise RuntimeError('navigate_list failed - clipboard never got input')
+        lines = clip_text.split()
+        try:
+            line = lines[num - 1].rstrip("\n")
+        except IndexError:
+            raise RuntimeError
+        if modify_line:
+            line = modify_line(line)
+        if isinstance(exec_cmd, str):
+            keyboard.KeyPress.from_raw_text(f'{exec_cmd} "{line}"').send()
+            keyboard.KeyPress.from_space_delimited_string('enter').send()
+        else:
+            return exec_cmd(line)
 
 def checkout_numbered_branch(num):
     def modify_line(line):
