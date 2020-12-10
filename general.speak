@@ -1,2 +1,1 @@
 snippet(path) => read('snippets\\' + $path)
-on_load() => setState('windows_terminal', false()) setState('git_bash', false())

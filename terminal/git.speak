@@ -1,4 +1,4 @@
-is_active() => state.git_bash || state.windows_terminal
+is_active() => window.test('MINGW64') || window.test('evan@')
 
 git branch = 'git branch '
 git checkout = 'git checkout '

@@ -1,5 +1,5 @@
 on_load() => extensions.register('terminal.wsl.py', wsl)
-is_active() => state.git_bash || state.windows_terminal
+is_active() => window.test('MINGW64') || window.test('evan@')
 
 paths := home='~' | (oh see h)='~/lp/och' | downloads='/c/users/fredere1/downloads' | projects='~/lp'
 

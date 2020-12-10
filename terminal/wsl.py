@@ -21,6 +21,15 @@ def linux_path(win_path):
 def new_logfile_path():
     return os.path.join(log_dir(), 'osspeak_log.txt')
 
+def docker_copy(gather_cmd, num, col=0):
+    res = docker(gather_cmd, lambda x: x, num, col)
+    clipboard.set(res)
+
+def docker(gather_cmd, exec_cmd, num, col=0):
+    def modify_line(line):
+        return line.split()[col]
+    return navigate_list(gather_cmd, exec_cmd, int(num) + 1, modify_line=modify_line)
+
 def navigate_list(gather_cmd, exec_cmd, num, modify_line=None):
     with clipboard.save_current():
         tmp_clip = str(uuid.uuid4())
@@ -36,7 +45,7 @@ def navigate_list(gather_cmd, exec_cmd, num, modify_line=None):
             clip_text = clipboard.get()
             if s + 5 < time.time():
                 raise RuntimeError('navigate_list failed - clipboard never got input')
-        lines = clip_text.split()
+        lines = clip_text.split('\n')
         try:
             line = lines[num - 1].rstrip("\n")
         except IndexError:

@@ -1,4 +1,4 @@
-is_active() => state.git_bash || state.windows_terminal
+is_active() => window.test('MINGW64') || window.test('evan@')
 
 python = 'python '
 active virtual environment = 'source bin/activate' {enter}
