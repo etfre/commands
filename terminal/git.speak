@@ -1,4 +1,4 @@
-is_active() => 'evan@'
+is_active() => state.git_bash || state.windows_terminal
 
 git branch = 'git branch '
 git checkout = 'git checkout '

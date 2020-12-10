@@ -1,4 +1,4 @@
-is_active() => window.test('evan@')
+is_active() => state.git_bash || state.windows_terminal
 
 python = 'python '
 active virtual environment = 'source bin/activate' {enter}

@@ -1,0 +1,3 @@
+is_active() => 'MINGW64'
+on_activate() => setState('git_bash', true())
+on_deactivate() => setState('git_bash', false())

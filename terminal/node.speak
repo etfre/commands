@@ -1,4 +1,4 @@
-is_active() => window.test('evan@')
+is_active() => state.git_bash || state.windows_terminal
 
 yarn install = 'yarn install ' 
 yarn dev = 'yarn dev '
