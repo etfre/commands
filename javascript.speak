@@ -33,3 +33,4 @@ initialize mutable <values> = 'let  = ' $1 ';' {left}~(len($1) + 4)
 value <values> = $1
 try catch = 'try {}' {left} {enter} {down} {ctrl enter} 'catch (e) {}' {left} {enter} {up}~3
 new (set=Set | map=Map) = 'new ' + $1 + '()'
+new functional component = snippet('react-fc.tsx')

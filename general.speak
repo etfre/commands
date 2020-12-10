@@ -1,0 +1,1 @@
+snippet(path) => read('snippets\\' + $path)
