@@ -1,7 +1,6 @@
 priority() => 2
 is_active() => "baldur's gate"
 on_activate() => setState(grid, screengrid.Grid()) setattr(state.grid, 'font_color', [128,128,128]) print('bg2 activate') 
-on_deactivate() => keyboard.remove_delay(/numkey\d/) print('bg2 deactivate')
 mouseMove(pos) => mouse.move($pos[0], $pos[1])
 moveUnit(key, count) => {$key}~$count
 mouseRelative(x, y) => mouse.move(int($x) * 5, int($y) * 5, false())  
