@@ -1,10 +1,17 @@
 is_active() => window.test('MINGW64') || window.test('evan@')
 
+docker() => if(window.test('MINGW64'), 'winpty docker', 'docker') + ' '
+
+container_commands := detached='-d ' | port='-p : ' | name='--name '
+
 docker containers = docker ps {enter}
 docker container <number> = wsl.docker_copy('docker ps', $1)
-docker all containers = 'docker ps -a' {enter}
-docker all container <number> = wsl.docker_copy('docker ps -a', $1)
+docker all containers = docker() + 'ps -a' {enter}
+docker all container <number> = wsl.docker_copy(docker() + 'ps -a', $1)
 docker images = docker images {enter}
-docker stop <number> = wsl.docker('docker ps', 'docker stop', $1)
-docker stop all = 'docker rm -f $(docker ps -a -q)' {enter}
-docker remove all = 'docker rm $(docker ps -aq)' {enter}
+docker image <number> = wsl.docker_copy(docker() + 'images', $1, 2)
+docker stop <number> = wsl.docker(docker() + 'ps', docker() + 'stop', $1)
+docker stop all = docker() + 'rm -f $(' + docker() +'ps -a -q)' {enter}
+docker remove all = docker() + 'rm $(docker ps -aq)' {enter}
+docker run <container_commands>_0-9 = docker() + 'run ' + if($1, $1, '')
+docker <container_commands>_1-9 = $1

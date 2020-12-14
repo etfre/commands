@@ -7,7 +7,7 @@ unzip = 'unzip '
 list files = 'ls | cat -n' {enter}
 list all = 'ls -a' {enter}
 climb [<number>] = 'cd ..' + '/..' * (int($1 || 1) - 1) {enter}
-drop [<number>] = wsl.drop($1)
+drop <number> = wsl.drop($1)
 new tab = {'ctrl shift 3'}
 close tab = {'ctrl shift w'}
 tab right = {'ctrl tab'}
@@ -29,6 +29,8 @@ execute <number> = wsl.navigate_list('ls', '', $1)
 
 pseudo = 'sudo '
 move = 'mv '
+touch = 'touch '
 make deer = 'mkdir '
 remove = 'rm '
 cd = 'cd '
+r m minus r f = 'rm -rf '

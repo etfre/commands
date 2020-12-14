@@ -24,6 +24,8 @@ def new_logfile_path():
 def docker_copy(gather_cmd, num, col=0):
     res = docker(gather_cmd, lambda x: x, num, col)
     clipboard.set(res)
+    keyboard.KeyPress.from_raw_text(f'echo "Copied {clipboard.get()}"').send()
+    keyboard.KeyPress.from_space_delimited_string('enter').send()
 
 def docker(gather_cmd, exec_cmd, num, col=0):
     def modify_line(line):
@@ -47,13 +49,17 @@ def navigate_list(gather_cmd, exec_cmd, num, modify_line=None):
                 raise RuntimeError('navigate_list failed - clipboard never got input')
         lines = clip_text.split('\n')
         try:
-            line = lines[num - 1].rstrip("\n")
+            line = lines[num - 1]
         except IndexError:
             raise RuntimeError
         if modify_line:
             line = modify_line(line)
+        line = line.rstrip('\r\n')
+        print('line', line.split()) 
         if isinstance(exec_cmd, str):
-            keyboard.KeyPress.from_raw_text(f'{exec_cmd} "{line}"').send()
+            cmd = f'{exec_cmd} "{line}"'
+            print(cmd)
+            keyboard.KeyPress.from_raw_text(cmd).send()
             keyboard.KeyPress.from_space_delimited_string('enter').send()
         else:
             return exec_cmd(line)
