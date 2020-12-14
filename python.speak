@@ -2,8 +2,7 @@ is_active() => window.test('Visual Studio Code') && state.language == python
 #on_activate() => print('python language activated') engine.set_end_silence_timeout(0) engine.set_end_silence_timeout_ambiguous(0)
 #on_deactivate() => print('python language deactivated')
 
-pyKeywordAfter := yield | return | import | with | not
-pyKeywordBetween := in | is | and | or
+pyKeywordAfter := yield | return | import | with | not | from
 builtin_functions := print | sum | (two pull)=tuple | length=len | (get attribute)=getattr | any | all | dear=dir | open | zip | string=str | type | super | set | range | representation=repr | (is instance) = isinstance | id | min | max | input | float | integer=int | reversed | enumerate | sorted
 pyValue := list='[]' | dictionary='{}' | none=None | string="''" | (double string)='""' |  true=True | false=False | slice='[:]' | (step slice)='[::]'
 pyError := (key error)=KeyError | (runtime error)=RuntimeError | (type error)=TypeError | (value error)=ValueError | exception=Exception | (oh es error)=OSError | (assertion error)=AssertionError | (attribute error)=AttributeError | (index error)=IndexError | (not implemented error)=NotImplementedError | (recursion error)=RecursionError
@@ -24,8 +23,7 @@ while loop = 'while :' {left}
 read file = 'with open() as f:' {left}~7
 write file = 'with open(, "w") as f:' {left}~12
 continue | break | pass = $1 {enter}
-keyword <pyKeywordAfter> = $1 + ' '
-keyword <pyKeywordBetween> = ' ' + $1 + ' '
+<pyKeywordAfter> = $1 + ' '
 call (<builtin_functions> | <pyError>) = $1 + '()' {left}
 call that = '()' {left}
 index that = '[]' {left}

@@ -13,7 +13,7 @@ operator := plus='+' | minus='-' | divide='/' | multiply='*' | percentage='%' | 
 [<action>] <movement> [<number>] = {if($1 != none(), 'shift ', '') + $2}~$3
 <operator> = ' ' + $1 + ' '
 short <operator> = $1
-pens = '()'
+parentheses = '()'
 braces = '{}'
 blocks = '[]'
 <action> <region> [<number>] = $2~$3 {$1} if($1 == 'ctrl c', {esc})  
@@ -35,7 +35,7 @@ focus next [<number>] = {f6}~$1
 focus <direction> [<number>] = {ctrl k} {ctrl + ' ' + $1}
 focus previous [<number>] = {shift f6}~$1
 close panel = {ctrl k} w
-source control = {ctrl shift g} g
+source control = {ctrl shift g}
 tab left [<number>] = {ctrl pageup}~$1
 tab right [<number>] = {ctrl pagedown}~$1
 new tab = {ctrl n}

@@ -1,0 +1,6 @@
+is_active() => 'Insomnia'
+
+focus url = {ctrl l}
+send request = {ctrl enter}
+(switch | change) requests = {ctrl p}
+(switch | change) http method = {ctrl shift l}
