@@ -1,10 +1,11 @@
 is_active() => window.test('MINGW64') || window.test('evan@')
 
-python() => if(window.test('MINGW64'), 'winpty python ', 'python3 ')
+is_git_bash() => window.test('MINGW64')
+python() => if(is_git_bash(), 'winpty python ', 'python3 ')
 
 python = python()
 create virtual envinronment = python() + '-m venv .' {enter}
-active virtual environment = 'source bin/activate' {enter}
+activate virtual environment = 'source ' + if(is_git_bash(), 'scripts/activate', 'bin/activate') {enter}
 exit virtual environment = deactivate {enter}
 pip install = 'pip install '
 pip freeze = 'pip freeze > requirements.txt' {enter}
